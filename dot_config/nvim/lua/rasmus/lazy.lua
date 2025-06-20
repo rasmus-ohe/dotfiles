@@ -15,9 +15,6 @@ require("lazy").setup({
   { import = 'rasmus.plugins' },
   { import = 'rasmus.plugins.lsp' },
 }, {
-  git = {
-    url_format = "git@github.com:%s.git",
-  },
   change_detection = {
     notify = false  
   },

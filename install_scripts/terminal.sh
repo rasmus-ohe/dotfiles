@@ -24,8 +24,8 @@ sudo cp ../bin/foot-wrapper.fish /usr/local/bin/
 
 # Install fish shell
 if ! is_installed fish; then
-  ehco "Installing fish shell..."
-  sudo pacman -S noconfirm fish
+  echo "Installing fish shell..."
+  sudo pacman -S --noconfirm fish
 else
   echo "fish shell is installed."
 fi

@@ -14,10 +14,12 @@ abbr nf 'nvim ~/.config/fish/config.fish'
 
 # Package managers
 abbr pi 'sudo pacman -Syu --noconfirm'
-abbr pr 'sudo pacman -Rns'
-abbr pc 'sudo pacman -Rns $(pacman -Qdtq)'
+abbr pr 'sudo pacman -Rcns'
+abbr pc 'sudo pacman -Rcns $(pacman -Qdtq)'
 abbr yi 'yay -Syu --noconfirm'
 abbr yr 'yay -Rns'
 
 # Hyprland
 abbr rh 'hyprctl reload'  # Reload hyprland
+
+fish_add_path /home/rasmus/.spicetify

@@ -35,6 +35,16 @@ Restart the sddm service
 sudo systemctl restart sddm
 ```
 
+## Additional tips
+
+To change the theme config, the `.conf` file is located at `/usr/share/sddm/themes/where_is_my_sddm_theme/theme.conf`. \
+My recommendations:
+
+```conf
+passwordFontSize=48
+passwordCursorColor=white
+```
+
 ## More information
 
 - [https://github.com/sddm/sddm](https://github.com/sddm/sddm)
