@@ -36,37 +36,12 @@ sudo pacman -S blueman bluez bluez-utils
 sudo systemctl enable --now bluetooth
 
 
-pacman_packages=(
+yay_packages=(
   linux-lts-headers
-  firefox
-  neovim
-  code  # Visual Studio Code
-  fastfetch
-  hyprpicker  # Colot picker
-  bitwarden
-  piper  # Logitech mouse daemon
-  wl-clipboard  # Wayland clipboard
-  man  # Manual pages
-  btop  # System monitor
-  qbittorrent  # Torrent client
-  pacman-contrib  #  Required for `checkupdates`
-  xdg-desktop-portal-hyprland
-  xdg-desktop-portal-gtk
-  kanshi  # Multi monitor profiles
-  pavucontrol  # Volume control (pulseaudio)
-  scrcpy  # Mirror Android device to desktop
-  fuzzel  # Application launcher
-  nwg-displays  # Display manager
-  gnome-calculator  # Basic calcualtor with GUI
-  brightnessctl
-
+  
   # Network
   networkmanager  # Automatically connects to networks
   nm-connection-editor  # Network manager GUI
-  
-  # Required by ente-auth-bin
-  gnome-keyring
-  libsecret
 
   # Git
   git
@@ -93,6 +68,7 @@ pacman_packages=(
   ttf-droid  # Required for vscode
 
   # Files
+  neovim  # File editor
   udisks2 # Backend DBus service
   udiskie  # Lightweight auto-mounting daemon that uses udisks2
   nemo  # File manager
@@ -100,6 +76,7 @@ pacman_packages=(
   nemo-terminal  # Terminal within nemo
   nemo-preview  # Quick preview files with `space`
   nemo-image-converter  # Rotate and resize images
+  bulky  # Bulk renamer (for Nemo)
   zathura  # PDF/image viewer
   zathura-cb  # Comic books support
   zathura-pdf-mupdf  # EPUB, PDF and XPS support based on MuPDF
@@ -108,42 +85,66 @@ pacman_packages=(
   zip
   unrar
   7zip
-  libreoffice-fresh
-  libreoffice-fresh-en-gb
+  libreoffice-fresh  # Office suite
+  voikko-libreoffice # Finnish spell checking for libreoffice
   syncthing  # File sharing
+  syncthing-gtk  # GUI for Syncthing
+  visual-studio-code-bin  # VSCode
 
   # Media
   vlc  # Media player
+  vlc-plugins-all  # Different codec support
   spotify-edge  # Spotify-client
   playerctl  # Aufio control with shortcuts
-)
 
-
-yay_packages=(
   # Web browsers
+  firefox  # Basic firefox
   zen-browser-bin  # Moddable firefox
   min  # Minimalistic web browser
 
-  # Other
-  ente-auth-bin  # Ente auth daemon
-  flatseal  # Flatpak permissions manager
+  # Security
+  bitwarden  # Password manager
+  gnome-keyring ## Required by ente-auth-bin
+  libsecret ## Required by ente-auth-bin
+  ente-auth-bin  # 2FA manager
+
+  # Social
+  betterbird-bin  # Alternative to thunderbird (mail client)
+  tutanota-desktop-bin  # TutaNota mail
+  beeper-v4-bin  # Beeper messanger
+
+  # Hyprland
   hyprshot  # Hyprland screenshot tool
   hyprshade  # Hyprland night light daemon
-  selectdefaultapplication-git  # See default applications
-  betterbird-bin  # Email client
-  voikko-libreoffice # Finnish spell checking for libreoffice
-  beeper-v4-bin  # Beeper messanger
-  syncthing-gtk  # GUI for Syncthing
-  tutanota-desktop-bin  # TutaNota mail
-  bulky  # Bulk renamer (for Nemo)
-  visual-studio-code-bin  # VSCode
-)
+  hyprlock  # Session lock
+  hyprpicker  # Color picker
 
-# Install packages (pacman)
-echo "Installing packages (pacman)..."
-for package in "${pacman_packages[@]}"; do
-  sudo pacman -S --noconfirm --needed "$package"
-done
+  # Tools
+  selectdefaultapplication-git  # See default applications
+  corectrl  # CPU/GPU overclocking
+  fastfetch  # System info
+  btop  # System monitor
+  swaykbdd  # Keyborad language changer
+  kanshi  # Multi monitor profiles
+  pavucontrol  # Volume control (pulseaudio)
+  nwg-displays  # Display manager
+  brightnessctl  # Brightness control
+
+
+  # Other
+  flatseal  # Flatpak permissions manager
+  hyprpolkitagent  # Popup for root password
+  piper  # Logitech mouse daemon
+  wl-clipboard  # Wayland clipboard
+  man  # Manual pages
+  qbittorrent  # Torrent client
+  pacman-contrib  #  Required for `checkupdates`
+  xdg-desktop-portal-hyprland
+  xdg-desktop-portal-gtk
+  scrcpy  # Mirror Android device to desktop
+  fuzzel  # Application launcher
+  gnome-calculator  # Basic calcualtor with GUI
+)
 
 # Install packages (AUR)
 echo "Installing packages (AUR)..."
@@ -154,8 +155,9 @@ done
 # Make zathura the default PDF viewer
 xdg-mime default org.pwmt.zathura.desktop application/pdf
 
+# Make Nemo the default file manager
+xdg-mime default nemo.desktop inode/directory
 
-
-
-
+# Enable the hypridle deamon
+systemctl --user enable --now hypridle.service
 

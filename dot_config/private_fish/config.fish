@@ -22,4 +22,15 @@ abbr yr 'yay -Rns'
 # Hyprland
 abbr rh 'hyprctl reload'  # Reload hyprland
 
+# FastFetch
+abbr ff 'fastfetch'
+
+# Color picker
+abbr picker 'hyprpicker'
+
+# Other
+abbr lsa 'ls -a'
+abbr lg 'ls -a | grep'
+
 fish_add_path /home/rasmus/.spicetify
+fish_add_path /home/rasmus/.local/bin/
