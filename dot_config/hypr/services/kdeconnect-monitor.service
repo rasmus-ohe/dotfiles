@@ -1,0 +1,7 @@
+[Unit]
+Description=KDE Connect device check (oneshot, ephemeral state)
+
+[Service]
+Type=oneshot
+Environment=DEVICE_ID=5b8e6c0ebe914a7588556afa24402dc9
+ExecStart=%h/.local/bin/kdeconnect-check

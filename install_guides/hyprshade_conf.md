@@ -12,15 +12,15 @@ Edit one of the pre-existing files in `/usr/share/hyprshade/shaders`
 
 ### Option 2
 
-Create a new `.glsl` file in `/usr/share/hyprshade/shaders`
+Create a new `.glsl` file, or copy one from `/usr/share/hyprshade/shaders` to `~/.config/hypr/shaders`
 
 ## Turn on shader
 
 ```bash
-hyprshade on blue-light-filter
+hyprshade on <shader-name>
 
 # or a full path name
-hyprshade on ~/.config/hypr/shaders/blue-light-filter.glsl
+hyprshade on ~/.config/hypr/shaders/<shader-name>.glsl
 ```
 
 If you provide the basename, Hyprshade searches in `~/.config/hypr/shaders` and `/usr/share/hyprshade`.

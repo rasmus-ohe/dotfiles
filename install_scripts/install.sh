@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Exit immediately if a command exits with a non-zero status
-set -e
+#set -e
 
 # Install yay (Yet Another Yogurt - AUR helper)
 if ! command -v yay &>/dev/null; then
@@ -68,6 +68,7 @@ yay_packages=(
   ttf-droid  # Required for vscode
 
   # Files
+  gvim  # vim + plugins
   neovim  # File editor
   udisks2 # Backend DBus service
   udiskie  # Lightweight auto-mounting daemon that uses udisks2
@@ -90,17 +91,27 @@ yay_packages=(
   syncthing  # File sharing
   syncthing-gtk  # GUI for Syncthing
   visual-studio-code-bin  # VSCode
+  ncdu  # Disk usage analyzer
+  trashy  # Trash manager; safer `rm` alternative
+  fzf  # Fuzzy search
+  lsd  # Modernized `ls`
+  dosfstools  # FAT formatting
+  exfatprogs  # ExFAT formatting
 
   # Media
   vlc  # Media player
   vlc-plugins-all  # Different codec support
   spotify-edge  # Spotify-client
   playerctl  # Aufio control with shortcuts
+  mpv  # Media player
+  audacity  # Audio editor
+  kdenlive  # Video editor
 
   # Web browsers
   firefox  # Basic firefox
   zen-browser-bin  # Moddable firefox
   min  # Minimalistic web browser
+  ddgr  # DuckDuckGo TUI
 
   # Security
   bitwarden  # Password manager
@@ -118,6 +129,7 @@ yay_packages=(
   hyprshade  # Hyprland night light daemon
   hyprlock  # Session lock
   hyprpicker  # Color picker
+  hypr-zoom  # Zoom-tool
 
   # Tools
   selectdefaultapplication-git  # See default applications
@@ -129,13 +141,22 @@ yay_packages=(
   pavucontrol  # Volume control (pulseaudio)
   nwg-displays  # Display manager
   brightnessctl  # Brightness control
+  mission-center  # GUI btop
+  nwg-look  # GTK settings manager
+  kicad  # Electronics design
+  systemd-ui  # GUI for systemd units
 
+  # Printing and scanning
+  cups  # Pringing system
+  cups-pdf  # "pring" into PDF
+  simple-scanner  # Gnome GUI for scanning
 
   # Other
   flatseal  # Flatpak permissions manager
   hyprpolkitagent  # Popup for root password
   piper  # Logitech mouse daemon
   wl-clipboard  # Wayland clipboard
+  wl-clip-persist  # Clipboard persistence
   man  # Manual pages
   qbittorrent  # Torrent client
   pacman-contrib  #  Required for `checkupdates`
@@ -144,6 +165,12 @@ yay_packages=(
   scrcpy  # Mirror Android device to desktop
   fuzzel  # Application launcher
   gnome-calculator  # Basic calcualtor with GUI
+  qt5-wayland
+  qt6-wayland
+  battery-notify  # Battery status notifier
+  reflector  # Arch mirrorlist updater
+  tealdeer  # Modernized `man`
+  battery-notify  # Battery notifier (inc. bluetooth devices)
 )
 
 # Install packages (AUR)
