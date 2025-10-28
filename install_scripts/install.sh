@@ -36,6 +36,9 @@ sudo pacman -S blueman bluez bluez-utils
 sudo systemctl enable --now bluetooth
 
 
+# Uninstall unwanted packages
+sudo pacman -Rns vim --noconfirm
+
 yay_packages=(
   linux-lts-headers
   
@@ -116,7 +119,7 @@ yay_packages=(
   # Security
   bitwarden  # Password manager
   gnome-keyring ## Required by ente-auth-bin
-  libsecret ## Required by ente-auth-bin
+  libsecret # Required by ente-auth-bin
   ente-auth-bin  # 2FA manager
 
   # Social
@@ -145,11 +148,17 @@ yay_packages=(
   nwg-look  # GTK settings manager
   kicad  # Electronics design
   systemd-ui  # GUI for systemd units
+  wtype  # Simulate keyboard input
 
   # Printing and scanning
   cups  # Pringing system
   cups-pdf  # "pring" into PDF
   simple-scanner  # Gnome GUI for scanning
+  system-config-printer  # Printer setup GUI
+
+  # Docker
+  docker
+  docker-compose
 
   # Other
   flatseal  # Flatpak permissions manager
@@ -171,13 +180,12 @@ yay_packages=(
   reflector  # Arch mirrorlist updater
   tealdeer  # Modernized `man`
   battery-notify  # Battery notifier (inc. bluetooth devices)
+  cpio  #
 )
 
 # Install packages (AUR)
 echo "Installing packages (AUR)..."
-for package in "${yay_packages[@]}"; do
-  yay -S --noconfirm "$package"
-done
+yay -S --noconfirm "${yay_package[@]}"
 
 # Make zathura the default PDF viewer
 xdg-mime default org.pwmt.zathura.desktop application/pdf
@@ -185,6 +193,6 @@ xdg-mime default org.pwmt.zathura.desktop application/pdf
 # Make Nemo the default file manager
 xdg-mime default nemo.desktop inode/directory
 
-# Enable the hypridle deamon
-systemctl --user enable --now hypridle.service
+# Rebuild font cache
+fc-cache -f -v
 

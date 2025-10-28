@@ -26,7 +26,7 @@ sudoedit /etc/sddm.conf
 
 ```ini
 [Theme]
-Current=where-is-my-sddm-theme
+Current=where_is_my_sddm_theme
 ```
 
 Restart the sddm service
@@ -44,6 +44,10 @@ My recommendations:
 passwordFontSize=48
 passwordCursorColor=white
 ```
+
+## Remove git dir
+
+If the sddm theme is fully working, you can remove the installed git directory (during ##Installation)
 
 ## More information
 
