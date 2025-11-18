@@ -1,0 +1,9 @@
+[Unit]
+Description=Run hourly-notify every hour on the hour
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -46,4 +46,4 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 fisher install IlanCosman/tide@v6
 
 # Restart shell
-echo "Please restart shell to start configuring the Tide theme!"
+echo "Restart shell, then run `tide configure`!"
