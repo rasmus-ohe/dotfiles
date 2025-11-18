@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Exit immediately if a command exits with a non-zero status
-set -e
-
 # Function to check if a package is installed
 is_installed() {
   pacman -Q "$1" &>/dev/null

@@ -15,13 +15,10 @@ if ! command -v yay &>/dev/null; then
 else
   echo "yay is already installed."
 fi
-
-
+  
 # Update system
 echo "Updating system..."
 sudo pacman -Syu --noconfirm
-
-
 
 # Keyd service
 sudo pacman -S --noconfirm keyd
@@ -29,7 +26,6 @@ echo "Copying keyd config file..."
 sudo mkdir -p /etc/keyd
 sudo cp ../etc/keyd/default.conf /etc/keyd/default.conf
 sudo systemctl enable --now keyd
-
 
 # Enable bluetooth
 sudo pacman -S blueman bluez bluez-utils
@@ -42,6 +38,8 @@ yay_packages=(
   # Network
   networkmanager  # Automatically connects to networks
   nm-connection-editor  # Network manager GUI
+  iftop  # TUI network monitor
+  ufw  # Netfilter firewall 
 
   # Git
   git
@@ -69,7 +67,7 @@ yay_packages=(
 
   # Files
   gvim  # vim + plugins
-  neovim  # File editor
+  neovim  # vim on steroids
   udisks2 # Backend DBus service
   udiskie  # Lightweight auto-mounting daemon that uses udisks2
   nemo  # File manager
@@ -97,6 +95,7 @@ yay_packages=(
   lsd  # Modernized `ls`
   dosfstools  # FAT formatting
   exfatprogs  # ExFAT formatting
+  gnome-disk-utility  # Disk Management Utility
 
   # Media
   vlc  # Media player
@@ -110,13 +109,14 @@ yay_packages=(
   # Web browsers
   firefox  # Basic firefox
   zen-browser-bin  # Moddable firefox
-  min  # Minimalistic web browser
   ddgr  # DuckDuckGo TUI
+  min-browser-bin  # Minimalistic chromium-browser
 
   # Security
   bitwarden  # Password manager
   gnome-keyring ## Required by ente-auth-bin
   libsecret ## Required by ente-auth-bin
+  seahorse # Keyring GUI
   ente-auth-bin  # 2FA manager
 
   # Social
@@ -146,17 +146,21 @@ yay_packages=(
   kicad  # Electronics design
   systemd-ui  # GUI for systemd units
 
+
   # Printing and scanning
   cups  # Pringing system
   cups-pdf  # "pring" into PDF
   simple-scanner  # Gnome GUI for scanning
 
+  # Clipboard
+  wl-clipboard  # Wayland clipboard
+  wl-clip-persist  # Clipboard persistence
+  cliphist  # Clipboard history manager
+
   # Other
   flatseal  # Flatpak permissions manager
   hyprpolkitagent  # Popup for root password
   piper  # Logitech mouse daemon
-  wl-clipboard  # Wayland clipboard
-  wl-clip-persist  # Clipboard persistence
   man  # Manual pages
   qbittorrent  # Torrent client
   pacman-contrib  #  Required for `checkupdates`
@@ -175,16 +179,12 @@ yay_packages=(
 
 # Install packages (AUR)
 echo "Installing packages (AUR)..."
-for package in "${yay_packages[@]}"; do
-  yay -S --noconfirm "$package"
-done
+yay -S --noconfirm --needed --quiet "${yay_packages[@]}"
+
 
 # Make zathura the default PDF viewer
 xdg-mime default org.pwmt.zathura.desktop application/pdf
 
 # Make Nemo the default file manager
 xdg-mime default nemo.desktop inode/directory
-
-# Enable the hypridle deamon
-systemctl --user enable --now hypridle.service
 
