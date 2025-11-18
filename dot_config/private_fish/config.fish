@@ -20,6 +20,13 @@ abbr cs 'code ~/.config/spicetify/'
 abbr cf 'code ~/.config/fish/config.fish'
 abbr cn 'code ~/.config/nvim/'
 
+# cd (move to directory)
+abbr cdh 'cd ~/.config/hypr/'
+abbr cdc 'cd ~/.local/share/chezmoi/'
+abbr cds 'cd ~/.config/spicetify/'
+abbr cdf 'cd ~/.config/fish/config.fish'
+abbr cdn 'cd ~/.config/nvim/'
+
 # Package managers
 abbr pi 'sudo pacman -Syu --noconfirm'
 abbr pr 'sudo pacman -Rcns'

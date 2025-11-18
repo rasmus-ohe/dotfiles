@@ -1,0 +1,6 @@
+[Unit]
+Description=Notify every full hour
+
+[Service]
+Type=oneshot
+ExecStart=/home/rasmus/.config/hypr/scripts/hourly-notify.sh
