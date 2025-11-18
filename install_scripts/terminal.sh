@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Exit immediately if a command exits with a non-zero status
-set -e
-
 # Function to check if a package is installed
 is_installed() {
   pacman -Q "$1" &>/dev/null
@@ -24,8 +21,8 @@ sudo cp ../bin/foot-wrapper.fish /usr/local/bin/
 
 # Install fish shell
 if ! is_installed fish; then
-  ehco "Installing fish shell..."
-  sudo pacman -S noconfirm fish
+  echo "Installing fish shell..."
+  sudo pacman -S --noconfirm fish
 else
   echo "fish shell is installed."
 fi
@@ -49,4 +46,4 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 fisher install IlanCosman/tide@v6
 
 # Restart shell
-echo "Please restart shell to start configuring the Tide theme!"
+echo "Restart shell, then run `tide configure`!"

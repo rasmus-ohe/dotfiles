@@ -23,3 +23,6 @@ keymap.set('n', '<leader>qa', '<cmd>qa<CR>', { desc = 'Quit Neovim (all)' })
 keymap.set('n', '<leader>ww', '<cmd>w<CR>', { desc = 'Save Neovim' })
 keymap.set('n', '<leader>wa', '<cmd>wa<CR>', { desc = 'Save all Neovim buffers' })
 keymap.set('n', '<leader>wq', '<cmd>wq<CR>', { desc = 'Save and quit Neovim' })
+
+--- search
+keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR><Esc>", { silent = true, desc = "Esc clears search highlight" })

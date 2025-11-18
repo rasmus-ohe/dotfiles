@@ -5,19 +5,91 @@ end
 
 ## Abbreviations
 # Neovim
-abbr vi 'nvim'
+alias vi='nvim'
 abbr nv 'nvim'
 abbr nh 'nvim ~/.config/hypr/'
 abbr nc 'nvim ~/.local/share/chezmoi/'
 abbr ns 'nvim ~/.config/spicetify/'
 abbr nf 'nvim ~/.config/fish/config.fish'
+abbr nn 'nvim ~/.config/nvim/'
+
+# VSCode
+abbr ch 'code ~/.config/hypr/'
+abbr cc 'code ~/.local/share/chezmoi/'
+abbr cs 'code ~/.config/spicetify/'
+abbr cf 'code ~/.config/fish/config.fish'
+abbr cn 'code ~/.config/nvim/'
+
+# cd (move to directory)
+abbr cdh 'cd ~/.config/hypr/'
+abbr cdc 'cd ~/.local/share/chezmoi/'
+abbr cds 'cd ~/.config/spicetify/'
+abbr cdf 'cd ~/.config/fish/config.fish'
+abbr cdn 'cd ~/.config/nvim/'
 
 # Package managers
 abbr pi 'sudo pacman -Syu --noconfirm'
-abbr pr 'sudo pacman -Rns'
-abbr pc 'sudo pacman -Rns $(pacman -Qdtq)'
+abbr pr 'sudo pacman -Rcns'
+abbr pc 'sudo pacman -Rcns $(pacman -Qdtq)'
 abbr yi 'yay -Syu --noconfirm'
 abbr yr 'yay -Rns'
+abbr yq 'yay -Qu'
 
 # Hyprland
 abbr rh 'hyprctl reload'  # Reload hyprland
+
+# Hyprshade
+abbr hsn 'hyprshade on warm-blue-light-filter'
+abbr hsf 'hyprshade off'
+
+# Systemctl
+abbr sys 'systemctl'
+abbr syse 'systemctl enable'
+abbr syss 'systemctl status'
+abbr sysr 'systemctl restart'
+abbr sysd 'systemctl disable'
+abbr sysu 'systemctl --user'
+abbr sysue 'systemctl --user enable'
+abbr sysus 'systemctl --user status'
+abbr sysur 'systemctl --user restart'
+abbr sysud 'systemctl --user disable'
+abbr sysudr 'systemctl --user daemon-reexec && systemctl --user daemon-reload'
+
+# FastFetch
+abbr ff 'fastfetch'
+
+# Color picker
+abbr picker 'hyprpicker'
+
+# Trash
+alias rm='trash'
+abbr tr 'trash'
+abbr rmc 'trash ~/.cache/yay/'  # Remove yay cache
+
+# Ping test
+abbr pa 'ping -c 3 aur.archlinux.org'
+abbr pi 'ping -c 3 aur.archlinux.org'
+
+# `ls` command
+alias ls='lsd'
+abbr lsa 'ls -a'
+abbr lg 'ls -a | grep'
+
+# man/tldr
+abbr man 'tldr'
+alias mann='man'
+
+# Rust (cargo)
+abbr cb 'cargo build'
+abbr cr 'cargo run'
+abbr cbr 'cargo build --release'
+abbr crr 'cargo run --release'
+abbr cw 'cargo watch -x run'
+
+# Other
+abbr cl 'clear'
+abbr yz 'yazi'
+
+fish_add_path /home/rasmus/.spicetify
+fish_add_path /home/rasmus/.local/bin/
+fish_add_path /home/rasmus/.cargo/bin/

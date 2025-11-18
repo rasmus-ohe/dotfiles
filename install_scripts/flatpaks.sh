@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# Install Flatpaks
 flatpak install flathub us.zoom.Zoom
+flatpak install flathub net.corluma.Corluma

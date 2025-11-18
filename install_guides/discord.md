@@ -3,7 +3,7 @@
 ## 1. Install basic version of Discord
 
 ```bash
-yay -S discord
+yay -Syu discord
 ```
 
 Login with your account before continuing.
@@ -11,5 +11,5 @@ Login with your account before continuing.
 ## 2. Install mods
 
 ```bash
-yay -S openasar-git legcord-git
+yay -Syu openasar-bin legcord-bin
 ```

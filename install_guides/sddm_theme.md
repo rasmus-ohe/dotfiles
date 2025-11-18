@@ -26,7 +26,7 @@ sudoedit /etc/sddm.conf
 
 ```ini
 [Theme]
-Current=where-is-my-sddm-theme
+Current=where_is_my_sddm_theme
 ```
 
 Restart the sddm service
@@ -34,6 +34,20 @@ Restart the sddm service
 ```bash
 sudo systemctl restart sddm
 ```
+
+## Additional tips
+
+To change the theme config, the `.conf` file is located at `/usr/share/sddm/themes/where_is_my_sddm_theme/theme.conf`. \
+My recommendations:
+
+```conf
+passwordFontSize=48
+passwordCursorColor=white
+```
+
+## Remove git dir
+
+If the sddm theme is fully working, you can remove the installed git directory (during ##Installation)
 
 ## More information
 
