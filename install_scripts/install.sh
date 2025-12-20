@@ -123,7 +123,7 @@ yay_packages=(
   ente-auth-bin  # 2FA manager
 
   # Social
-  betterbird-bin  # Alternative to thunderbird (mail client)
+  betterbird-bin  # Thunderbird alternative (mail client)
   tutanota-desktop-bin  # TutaNota mail
   beeper-v4-bin  # Beeper messanger
 
