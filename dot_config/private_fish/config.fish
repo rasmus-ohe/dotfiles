@@ -32,6 +32,7 @@ abbr pi 'sudo pacman -Syu --noconfirm'
 abbr pr 'sudo pacman -Rcns'
 abbr pc 'sudo pacman -Rcns $(pacman -Qdtq)'
 abbr yi 'yay -Syu --noconfirm'
+abbr yin 'yay -Syu --noconfirm --needed'
 abbr yr 'yay -Rns'
 abbr yq 'yay -Qu'
 
@@ -62,9 +63,9 @@ abbr ff 'fastfetch'
 abbr picker 'hyprpicker'
 
 # Trash
-alias rm='trash'
-abbr tr 'trash'
-abbr rmc 'trash ~/.cache/yay/'  # Remove yay cache
+alias rm='trashy'
+abbr tr 'trashy'
+abbr rmc 'trashy ~/.cache/yay/'  # Remove yay cache
 
 # Ping test
 abbr pa 'ping -c 3 aur.archlinux.org'
@@ -85,6 +86,11 @@ abbr cr 'cargo run'
 abbr cbr 'cargo build --release'
 abbr crr 'cargo run --release'
 abbr cw 'cargo watch -x run'
+abbr ca 'cargo add'
+
+# Wireguard
+abbr wu 'sudo wg-quick up'
+abbr wd 'sudo wg-quick down'
 
 # Other
 abbr cl 'clear'
