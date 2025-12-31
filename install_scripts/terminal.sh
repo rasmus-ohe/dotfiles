@@ -42,8 +42,13 @@ chsh -s "$(which fish)"
 # Install Fisher plugin-manager
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 
-# Install Tide theme (similiar to p10k for zsh)
-fisher install IlanCosman/tide@v6
+# Install fisher plugins
+fisher install IlanCosman/tide@v6  # Tide theme (similiar to p10k for zsh)
+fisher install jethrokuan/z  # directory jumper
+fisher install PatrickF1/fzf.fish  # fzf integration
+fisher install franciscolourenco/done  # notification when long tasks complete
+fisher install PatrickF1/fzf.fish  # Paires brackets
+fisher install gazorby/fish-abbreviation-tips  # Suggest abbreviations based on history
 
 # Restart shell
 echo "Restart shell, then run `tide configure`!"

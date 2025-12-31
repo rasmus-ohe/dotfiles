@@ -192,6 +192,7 @@ yay_packages=(
   battery-notify  # Battery notifier (inc. bluetooth devices)
   cpio  #
   activitywarch-bin  # Application time tracker
+  fd  # Alternative to 'find' command (required for fzf.fish)
 )
 
 # Install packages (AUR)
