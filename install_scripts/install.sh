@@ -100,6 +100,7 @@ yay_packages=(
   lsd  # Modernized `ls`
   dosfstools  # FAT formatting
   exfatprogs  # ExFAT formatting
+  glow  # Markdown viewer in terminal
 
   # Media
   vlc  # Media player
