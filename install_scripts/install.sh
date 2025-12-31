@@ -41,8 +41,12 @@ yay_packages=(
   # Network
   networkmanager  # Automatically connects to networks
   nm-connection-editor  # Network manager GUI
+  network-manager-applet  # Applet for managing network connections
   iftop  # TUI network monitor
   ufw  # Netfilter firewall 
+  wireguard-tools  # Tools for configuring Wireguard
+  systemd-resolvconf  # Configure systemd-resolved
+  speedtest++  # Network speed test
 
   # Git
   git
@@ -67,6 +71,7 @@ yay_packages=(
   noto-fonts
   noto-fonts-emoji
   ttf-droid  # Required for vscode
+  ttf-fira-code  # For coding
 
   # Files
   gvim  # vim + plugins
@@ -150,7 +155,7 @@ yay_packages=(
   kicad  # Electronics design
   systemd-ui  # GUI for systemd units
   wtype  # Simulate keyboard input
-
+  wev  # Display input events
 
   # Printing and scanning
   cups  # Pringing system
@@ -171,6 +176,7 @@ yay_packages=(
   flatseal  # Flatpak permissions manager
   hyprpolkitagent  # Popup for root password
   piper  # Logitech mouse daemon
+  solaar  # Logitech device manager
   man  # Manual pages
   qbittorrent  # Torrent client
   pacman-contrib  #  Required for `checkupdates`
@@ -186,6 +192,8 @@ yay_packages=(
   tealdeer  # Modernized `man`
   battery-notify  # Battery notifier (inc. bluetooth devices)
   cpio  #
+  activitywarch-bin  # Application time tracker
+  fd  # Alternative to 'find' command (required for fzf.fish)
 )
 
 # Install packages (AUR)
