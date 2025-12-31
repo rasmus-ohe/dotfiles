@@ -99,6 +99,7 @@ yay_packages=(
   dosfstools  # FAT formatting
   exfatprogs  # ExFAT formatting
   gnome-disk-utility  # Disk Management Utility
+  glow  # Markdown viewer in terminal
 
   # Media
   vlc  # Media player
@@ -123,7 +124,7 @@ yay_packages=(
   ente-auth-bin  # 2FA manager
 
   # Social
-  betterbird-bin  # Alternative to thunderbird (mail client)
+  betterbird-bin  # Thunderbird alternative (mail client)
   tutanota-desktop-bin  # TutaNota mail
   beeper-v4-bin  # Beeper messanger
 

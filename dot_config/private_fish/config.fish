@@ -32,6 +32,7 @@ abbr pi 'sudo pacman -Syu --noconfirm'
 abbr pr 'sudo pacman -Rcns'
 abbr pc 'sudo pacman -Rcns $(pacman -Qdtq)'
 abbr yi 'yay -Syu --noconfirm'
+abbr yin 'yay -Syu --noconfirm --needed'
 abbr yr 'yay -Rns'
 abbr yq 'yay -Qu'
 
@@ -62,9 +63,9 @@ abbr ff 'fastfetch'
 abbr picker 'hyprpicker'
 
 # Trash
-alias rm='trash'
-abbr tr 'trash'
-abbr rmc 'trash ~/.cache/yay/'  # Remove yay cache
+alias rm='trashy'
+abbr tr 'trashy'
+abbr rmc 'trashy ~/.cache/yay/'  # Remove yay cache
 
 # Ping test
 abbr pa 'ping -c 3 aur.archlinux.org'
@@ -88,7 +89,7 @@ abbr cw 'cargo watch -x run'
 
 # Other
 abbr cl 'clear'
-abbr yz 'yazi'
+abbr yz 'yazi .'
 
 fish_add_path /home/rasmus/.spicetify
 fish_add_path /home/rasmus/.local/bin/
