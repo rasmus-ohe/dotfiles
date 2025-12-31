@@ -5,5 +5,5 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	name = RasseTheBoy
+	name = rasmus-ohe
 	email = rassemichael@gmail.com
