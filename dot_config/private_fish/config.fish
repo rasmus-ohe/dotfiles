@@ -94,7 +94,7 @@ abbr wd 'sudo wg-quick down'
 
 # Other
 abbr cl 'clear'
-abbr yz 'yazi .'
+abbr yz 'yazi'
 
 fish_add_path /home/rasmus/.spicetify
 fish_add_path /home/rasmus/.local/bin/
