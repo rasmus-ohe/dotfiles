@@ -22,6 +22,7 @@ abbr cn 'code ~/.config/nvim/'
 
 # cd (move to directory)
 abbr cdh 'cd ~/.config/hypr/'
+abbr cdhs 'cd ~/.config/hypr/scripts/'
 abbr cdc 'cd ~/.local/share/chezmoi/'
 abbr cds 'cd ~/.config/spicetify/'
 abbr cdf 'cd ~/.config/fish/config.fish'
@@ -86,6 +87,11 @@ abbr cr 'cargo run'
 abbr cbr 'cargo build --release'
 abbr crr 'cargo run --release'
 abbr cw 'cargo watch -x run'
+abbr ca 'cargo add'
+
+# Wireguard
+abbr wu 'sudo wg-quick up'
+abbr wd 'sudo wg-quick down'
 
 # Other
 abbr cl 'clear'
