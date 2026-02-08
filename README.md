@@ -21,7 +21,7 @@ This should create a `.local/share/chezmoi` directory.
 ### Git clone dotfiles
 
 ```bash
-git clone git@github.com:RasseTheBoy/minimialist-dotfiles.git ~/.local/share/chezmoi
+git clone git@github.com:rasmus-ohe/minimialist-dotfiles.git ~/.local/share/chezmoi
 ```
 
 ### Install dotfiles
