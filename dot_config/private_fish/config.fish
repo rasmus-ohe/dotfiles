@@ -27,6 +27,8 @@ abbr cdc 'cd ~/.local/share/chezmoi/'
 abbr cds 'cd ~/.config/spicetify/'
 abbr cdf 'cd ~/.config/fish/config.fish'
 abbr cdn 'cd ~/.config/nvim/'
+abbr cdb 'cd ~/Documents/Blender/'
+abbr cdbp 'cd ~/Documents/Blender/Projects/'
 
 # Package managers
 abbr pi 'sudo pacman -Syu --noconfirm'
@@ -93,9 +95,15 @@ abbr ca 'cargo add'
 abbr wu 'sudo wg-quick up'
 abbr wd 'sudo wg-quick down'
 
+# Transtale
+abbr tef 'trans en:fi'
+abbr tes 'trans en:swe'
+abbr tsf 'trans swe:fi'
+abbr tfs 'trans fi:swe'
+
 # Other
 abbr cl 'clear'
-abbr yz 'yazi .'
+abbr yz 'yazi'
 
 fish_add_path /home/rasmus/.spicetify
 fish_add_path /home/rasmus/.local/bin/

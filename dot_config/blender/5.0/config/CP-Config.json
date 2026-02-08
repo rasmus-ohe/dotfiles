@@ -1,0 +1,675 @@
+{
+    "online_version": "Could not check!",
+    "update_message": "",
+    "download_page_url": "https://blendermarket.com/account/orders_search?orders_search%5Bq%5D=bl_ext.user_default.CleanPanels",
+    "update_available": false,
+    "check_for_updates": false,
+    "check_on_boot": false,
+    "last_check_time": "07:02 PM on January 24,2026",
+    "check_every_days": 7,
+    "use_filter_sort_alpha": true,
+    "config_corrupted": false,
+    "auto_run_magic_setup": false,
+    "show_button_to_load_uncategorized": false,
+    "show_quick_reorder": true,
+    "show_quick_focus_search_button": false,
+    "easy_mode": true,
+    "main_tabs": "Organize",
+    "remove_uninstalled_addons": true,
+    "use_filtering_in_node_editor": true,
+    "use_filtering_in_image_editor": true,
+    "hide_pie_panels": false,
+    "hide_dropdown_panels": false,
+    "use_enum_search_for_popups": false,
+    "auto_backup_addons": false,
+    "show_panel_pies": false,
+    "pop_out_style": "Pie-PopUp",
+    "show_keymaps": false,
+    "active_tab": "Filtering",
+    "active_tab_quick_settings": "Filtering",
+    "addon_loading_categories": [],
+    "panel_categories": [],
+    "dropdown_categories": [],
+    "workspace_categories": [
+        {
+            "icon": "GREASEPENCIL",
+            "panels": "Fluid Painter,Fluid Painter NSFW,Fluid Particles",
+            "name": "Fluids",
+            "show": true
+        },
+        {
+            "icon": "MOD_VERTEX_WEIGHT",
+            "panels": "EasyWeight,Robust Weight Transfer",
+            "name": "Weight paint",
+            "show": false
+        },
+        {
+            "icon": "OUTLINER_OB_ARMATURE",
+            "panels": "Autogrip,MustardUI,Voxel Heat Diffuse Skinning,MHX Runtime System,Rigify,DAZ importer,Auto-Rig Pro,Auto-Rig Pro Tools,Bone Widget",
+            "name": "Rig",
+            "show": true
+        },
+        {
+            "icon": "CAMERA_DATA",
+            "panels": "Lazy Composer 2",
+            "name": "Camera",
+            "show": false
+        },
+        {
+            "icon": "RENDER_ANIMATION",
+            "panels": "Animation Layers",
+            "name": "Animation",
+            "show": false
+        },
+        {
+            "icon": "OPTIONS",
+            "panels": "Mustard Simplify,ToOptimize Tools",
+            "name": "Optimize",
+            "show": false
+        }
+    ],
+    "focus_panel_categories": [],
+    "workspace_categories_image_editor": [],
+    "focus_panel_categories_image_editor": [],
+    "workspace_categories_node_editor": [],
+    "focus_panel_categories_node_editor": [],
+    "load_addons_with_filtering": false,
+    "show_addon_loading_categories": false,
+    "show_panel_categories": false,
+    "show_dropdown_categories": false,
+    "show_workspace_categories": false,
+    "show_npanel_ordering": false,
+    "show_npanel_renaming": false,
+    "show_focus_panel_categories": false,
+    "draw_side": "RIGHT",
+    "addons_to_exclude": "Add Camera Rigs,Camera Shakify,LoopTools,Node Wrangler,Pose Library,Cycles Render Engine,Jiggle Physics",
+    "addons_to_exclude_node_editor": "",
+    "addons_to_exclude_image_editor": "",
+    "experimental": false,
+    "use_sticky_popup": true,
+    "addon_info": [
+        {
+            "name": "Tool",
+            "display_name": "",
+            "addons": "bl_ui,ARP_rig_tools",
+            "ordered": ""
+        },
+        {
+            "name": "View",
+            "display_name": "",
+            "addons": ",bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "Animation",
+            "display_name": "",
+            "addons": "bl_ui,Animation_Layers,jiggle_physics",
+            "ordered": ""
+        },
+        {
+            "name": "MustardUI",
+            "display_name": "",
+            "addons": "MustardUI",
+            "ordered": ""
+        },
+        {
+            "name": "ToOptimize Tools",
+            "display_name": "",
+            "addons": "ToOptimize-Tools",
+            "ordered": ""
+        },
+        {
+            "name": "ARP",
+            "display_name": "",
+            "addons": "auto_rig_pro",
+            "ordered": ""
+        },
+        {
+            "name": "DAZ Runtime",
+            "display_name": "",
+            "addons": "import_daz",
+            "ordered": ""
+        },
+        {
+            "name": "MHX",
+            "display_name": "",
+            "addons": "mhx_rts",
+            "ordered": ""
+        },
+        {
+            "name": "Simplify",
+            "display_name": "",
+            "addons": "MustardSimplify",
+            "ordered": ""
+        },
+        {
+            "name": "Fluid Painter",
+            "display_name": "",
+            "addons": "FluidPainter",
+            "ordered": ""
+        },
+        {
+            "name": "AutoGrip",
+            "display_name": "",
+            "addons": "autogrip-main",
+            "ordered": ""
+        },
+        {
+            "name": "Edit",
+            "display_name": "",
+            "addons": "looptools",
+            "ordered": ""
+        },
+        {
+            "name": "Rigify",
+            "display_name": "",
+            "addons": "rigify",
+            "ordered": ""
+        },
+        {
+            "name": "DAZ Setup",
+            "display_name": "",
+            "addons": "import_daz",
+            "ordered": ""
+        },
+        {
+            "name": "Mesh Online",
+            "display_name": "",
+            "addons": "voxel_skinning",
+            "ordered": ""
+        },
+        {
+            "name": "Lazy Composer 2 Pro",
+            "display_name": "",
+            "addons": "lazy_composer_2",
+            "ordered": ""
+        },
+        {
+            "name": "Extra Pies",
+            "display_name": "",
+            "addons": "viewport_pie_menus",
+            "ordered": ""
+        },
+        {
+            "name": "Fluid Particles",
+            "display_name": "",
+            "addons": "Fluid Particles",
+            "ordered": ""
+        },
+        {
+            "name": "Rigging",
+            "display_name": "",
+            "addons": "bone_widget",
+            "ordered": ""
+        }
+    ],
+    "addon_info_for_renaming": [
+        {
+            "name": "Animation_Layers",
+            "display_name": "Animation Layers",
+            "tab_name": "Animation",
+            "identifier": "Animation_Layers",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Animation"
+        },
+        {
+            "name": "add_camera_rigs",
+            "display_name": "Add Camera Rigs",
+            "tab_name": "Item",
+            "identifier": "bl_ext.blender_org.add_camera_rigs",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Item"
+        },
+        {
+            "name": "ARP_rig_tools",
+            "display_name": "Auto-Rig Pro Tools",
+            "tab_name": "Tool",
+            "identifier": "bl_ext.user_default.ARP_rig_tools",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Tool"
+        },
+        {
+            "name": "voxel_skinning",
+            "display_name": "Voxel Heat Diffuse Skinning",
+            "tab_name": "Mesh Online",
+            "identifier": "bl_ext.user_default.voxel_skinning",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Mesh Online"
+        },
+        {
+            "name": "FluidPainter",
+            "display_name": "Fluid Painter",
+            "tab_name": "Fluid Painter",
+            "identifier": "FluidPainter",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Fluid Painter"
+        },
+        {
+            "name": "autogrip-main",
+            "display_name": "Autogrip",
+            "tab_name": "AutoGrip",
+            "identifier": "autogrip-main",
+            "space": "VIEW_3D",
+            "backup_tab_name": "AutoGrip"
+        },
+        {
+            "name": "MustardUI",
+            "display_name": "MustardUI",
+            "tab_name": "MustardUI",
+            "identifier": "bl_ext.blender_org.MustardUI",
+            "space": "VIEW_3D",
+            "backup_tab_name": "MustardUI"
+        },
+        {
+            "name": "ToOptimize-Tools",
+            "display_name": "ToOptimize Tools",
+            "tab_name": "ToOptimize Tools",
+            "identifier": "ToOptimize-Tools",
+            "space": "VIEW_3D",
+            "backup_tab_name": "ToOptimize Tools"
+        },
+        {
+            "name": "looptools",
+            "display_name": "LoopTools",
+            "tab_name": "Edit",
+            "identifier": "bl_ext.blender_org.looptools",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Edit"
+        },
+        {
+            "name": "import_daz-DAZ Setup",
+            "display_name": "DAZ importer (DAZ Setup)",
+            "tab_name": "DAZ Setup",
+            "identifier": "import_daz",
+            "space": "VIEW_3D",
+            "backup_tab_name": "DAZ Setup"
+        },
+        {
+            "name": "import_daz-DAZ Runtime",
+            "display_name": "DAZ importer (DAZ Runtime)",
+            "tab_name": "DAZ Runtime",
+            "identifier": "import_daz",
+            "space": "VIEW_3D",
+            "backup_tab_name": "DAZ Runtime"
+        },
+        {
+            "name": "import_daz-Item",
+            "display_name": "DAZ importer (Item)",
+            "tab_name": "Item",
+            "identifier": "import_daz",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Item"
+        },
+        {
+            "name": "mhx_rts",
+            "display_name": "MHX Runtime System",
+            "tab_name": "MHX",
+            "identifier": "bl_ext.user_default.mhx_rts",
+            "space": "VIEW_3D",
+            "backup_tab_name": "MHX"
+        },
+        {
+            "name": "MustardSimplify",
+            "display_name": "Mustard Simplify",
+            "tab_name": "Simplify",
+            "identifier": "bl_ext.blender_org.MustardSimplify",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Simplify"
+        },
+        {
+            "name": "rigify",
+            "display_name": "Rigify",
+            "tab_name": "Rigify",
+            "identifier": "rigify",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Rigify"
+        },
+        {
+            "name": "auto_rig_pro",
+            "display_name": "Auto-Rig Pro",
+            "tab_name": "ARP",
+            "identifier": "bl_ext.user_default.auto_rig_pro",
+            "space": "VIEW_3D",
+            "backup_tab_name": "ARP"
+        },
+        {
+            "name": "lazy_composer_2",
+            "display_name": "Lazy Composer 2",
+            "tab_name": "Lazy Composer 2 Pro",
+            "identifier": "bl_ext.user_default.lazy_composer_2",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Lazy Composer 2 Pro"
+        },
+        {
+            "name": "jiggle_physics",
+            "display_name": "Jiggle Physics",
+            "tab_name": "Animation",
+            "identifier": "bl_ext.blender_org.jiggle_physics",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Animation"
+        },
+        {
+            "name": "viewport_pie_menus",
+            "display_name": "3D Viewport Pie Menus",
+            "tab_name": "Extra Pies",
+            "identifier": "bl_ext.blender_org.viewport_pie_menus",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Extra Pies"
+        },
+        {
+            "name": "Fluid Particles",
+            "display_name": "Fluid Particles",
+            "tab_name": "Fluid Particles",
+            "identifier": "Fluid Particles",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Fluid Particles"
+        },
+        {
+            "name": "bone_widget",
+            "display_name": "Bone Widget",
+            "tab_name": "Rigging",
+            "identifier": "bl_ext.blender_org.bone_widget",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Rigging"
+        }
+    ],
+    "addon_info_index": 3,
+    "addon_info_for_renaming_index": 0,
+    "addon_info_image_editor": [
+        {
+            "name": "Mask",
+            "display_name": "",
+            "addons": ",bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "Tool",
+            "display_name": "",
+            "addons": ",bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "View",
+            "display_name": "",
+            "addons": ",bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "Image",
+            "display_name": "",
+            "addons": ",bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "Scopes",
+            "display_name": "",
+            "addons": ",bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "Lazy Composer 2 Pro",
+            "display_name": "",
+            "addons": ",lazy_composer_2",
+            "ordered": ""
+        }
+    ],
+    "addon_info_for_renaming_image_editor": [
+        {
+            "name": "lazy_composer_2",
+            "display_name": "Lazy Composer 2",
+            "tab_name": "Lazy Composer 2 Pro",
+            "identifier": "bl_ext.user_default.lazy_composer_2",
+            "space": "IMAGE_EDITOR",
+            "backup_tab_name": "Lazy Composer 2 Pro"
+        }
+    ],
+    "addon_info_image_editor_index": 0,
+    "addon_info_for_renaming_image_editor_index": -1,
+    "addon_info_node_editor": [
+        {
+            "name": "Options",
+            "display_name": "",
+            "addons": "cycles,bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "Node",
+            "display_name": "",
+            "addons": "bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "Tool",
+            "display_name": "",
+            "addons": ",bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "View",
+            "display_name": "",
+            "addons": ",bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "Group",
+            "display_name": "",
+            "addons": "bl_ui",
+            "ordered": ""
+        },
+        {
+            "name": "Node Wrangler",
+            "display_name": "",
+            "addons": ",node_wrangler",
+            "ordered": ""
+        }
+    ],
+    "addon_info_for_renaming_node_editor": [
+        {
+            "name": "cycles",
+            "display_name": "Cycles Render Engine",
+            "tab_name": "Options",
+            "identifier": "cycles",
+            "space": "NODE_EDITOR",
+            "backup_tab_name": "Options"
+        },
+        {
+            "name": "node_wrangler",
+            "display_name": "Node Wrangler",
+            "tab_name": "Node Wrangler",
+            "identifier": "node_wrangler",
+            "space": "NODE_EDITOR",
+            "backup_tab_name": "Node Wrangler"
+        }
+    ],
+    "addon_info_node_editor_index": 0,
+    "addon_info_for_renaming_node_editor_index": 0,
+    "injected_code": false,
+    "injected_code_tracking": false,
+    "delayed_loading_code_injected": false,
+    "columm_layout_for_popup": true,
+    "use_verticle_menu": true,
+    "dropdown_width": 16,
+    "show_dropdown_search": false,
+    "categories": {
+        "filter_enabled": true,
+        "filter_enabled_node_editor": false,
+        "filter_enabled_image_editor": false,
+        "enabled_0": false,
+        "enabled_1": false,
+        "enabled_2": false,
+        "enabled_3": true,
+        "enabled_4": false,
+        "enabled_5": false,
+        "enabled_6": false,
+        "enabled_7": false,
+        "enabled_8": false,
+        "enabled_9": false,
+        "enabled_10": false,
+        "enabled_11": false,
+        "enabled_12": false,
+        "enabled_13": false,
+        "enabled_14": false,
+        "enabled_15": false,
+        "enabled_16": false,
+        "enabled_17": false,
+        "enabled_18": false,
+        "enabled_19": false,
+        "enabled_20": false,
+        "enabled_21": false,
+        "enabled_22": false,
+        "enabled_23": false,
+        "enabled_24": false,
+        "enabled_25": false,
+        "enabled_26": false,
+        "enabled_27": false,
+        "enabled_28": false,
+        "enabled_29": false,
+        "enabled_30": false,
+        "enabled_31": false,
+        "enabled_32": false,
+        "enabled_33": false,
+        "enabled_34": false,
+        "enabled_35": false,
+        "enabled_36": false,
+        "enabled_37": false,
+        "enabled_38": false,
+        "enabled_39": false,
+        "enabled_40": false,
+        "enabled_41": false,
+        "enabled_42": false,
+        "enabled_43": false,
+        "enabled_44": false,
+        "enabled_45": false,
+        "enabled_46": false,
+        "enabled_47": false,
+        "enabled_48": false,
+        "enabled_49": false,
+        "enabled_node_editor_0": false,
+        "enabled_node_editor_1": false,
+        "enabled_node_editor_2": false,
+        "enabled_node_editor_3": false,
+        "enabled_node_editor_4": false,
+        "enabled_node_editor_5": false,
+        "enabled_node_editor_6": false,
+        "enabled_node_editor_7": false,
+        "enabled_node_editor_8": false,
+        "enabled_node_editor_9": false,
+        "enabled_node_editor_10": false,
+        "enabled_node_editor_11": false,
+        "enabled_node_editor_12": false,
+        "enabled_node_editor_13": false,
+        "enabled_node_editor_14": false,
+        "enabled_node_editor_15": false,
+        "enabled_node_editor_16": false,
+        "enabled_node_editor_17": false,
+        "enabled_node_editor_18": false,
+        "enabled_node_editor_19": false,
+        "enabled_node_editor_20": false,
+        "enabled_node_editor_21": false,
+        "enabled_node_editor_22": false,
+        "enabled_node_editor_23": false,
+        "enabled_node_editor_24": false,
+        "enabled_node_editor_25": false,
+        "enabled_node_editor_26": false,
+        "enabled_node_editor_27": false,
+        "enabled_node_editor_28": false,
+        "enabled_node_editor_29": false,
+        "enabled_node_editor_30": false,
+        "enabled_node_editor_31": false,
+        "enabled_node_editor_32": false,
+        "enabled_node_editor_33": false,
+        "enabled_node_editor_34": false,
+        "enabled_node_editor_35": false,
+        "enabled_node_editor_36": false,
+        "enabled_node_editor_37": false,
+        "enabled_node_editor_38": false,
+        "enabled_node_editor_39": false,
+        "enabled_node_editor_40": false,
+        "enabled_node_editor_41": false,
+        "enabled_node_editor_42": false,
+        "enabled_node_editor_43": false,
+        "enabled_node_editor_44": false,
+        "enabled_node_editor_45": false,
+        "enabled_node_editor_46": false,
+        "enabled_node_editor_47": false,
+        "enabled_node_editor_48": false,
+        "enabled_node_editor_49": false,
+        "enabled_image_editor_0": false,
+        "enabled_image_editor_1": false,
+        "enabled_image_editor_2": false,
+        "enabled_image_editor_3": false,
+        "enabled_image_editor_4": false,
+        "enabled_image_editor_5": false,
+        "enabled_image_editor_6": false,
+        "enabled_image_editor_7": false,
+        "enabled_image_editor_8": false,
+        "enabled_image_editor_9": false,
+        "enabled_image_editor_10": false,
+        "enabled_image_editor_11": false,
+        "enabled_image_editor_12": false,
+        "enabled_image_editor_13": false,
+        "enabled_image_editor_14": false,
+        "enabled_image_editor_15": false,
+        "enabled_image_editor_16": false,
+        "enabled_image_editor_17": false,
+        "enabled_image_editor_18": false,
+        "enabled_image_editor_19": false,
+        "enabled_image_editor_20": false,
+        "enabled_image_editor_21": false,
+        "enabled_image_editor_22": false,
+        "enabled_image_editor_23": false,
+        "enabled_image_editor_24": false,
+        "enabled_image_editor_25": false,
+        "enabled_image_editor_26": false,
+        "enabled_image_editor_27": false,
+        "enabled_image_editor_28": false,
+        "enabled_image_editor_29": false,
+        "enabled_image_editor_30": false,
+        "enabled_image_editor_31": false,
+        "enabled_image_editor_32": false,
+        "enabled_image_editor_33": false,
+        "enabled_image_editor_34": false,
+        "enabled_image_editor_35": false,
+        "enabled_image_editor_36": false,
+        "enabled_image_editor_37": false,
+        "enabled_image_editor_38": false,
+        "enabled_image_editor_39": false,
+        "enabled_image_editor_40": false,
+        "enabled_image_editor_41": false,
+        "enabled_image_editor_42": false,
+        "enabled_image_editor_43": false,
+        "enabled_image_editor_44": false,
+        "enabled_image_editor_45": false,
+        "enabled_image_editor_46": false,
+        "enabled_image_editor_47": false,
+        "enabled_image_editor_48": false,
+        "enabled_image_editor_49": false
+    },
+    "filtering_method": "Use N-Panel Filtering",
+    "show_advanced": false,
+    "use_dropdowns": true,
+    "sort_per_category": false,
+    "holder_tab_name": "DUMP",
+    "remove_holder_tab": true,
+    "custom_icons_dir": "",
+    "sort_focus_menu_based_on_clicks": false,
+    "addon_desc_info": [],
+    "filtering_per_workspace": false,
+    "only_show_unfiltered_panels": true,
+    "show_delete_buttons_in_quick_settings": false,
+    "move_dropdowns_to_toolbar": false,
+    "space_type": "VIEW_3D",
+    "show_favorites": false,
+    "favorites": [],
+    "favorites_index": 0,
+    "filter_internal_tabs": false,
+    "delayed_addons_loaded": false,
+    "atl_list": "",
+    "show_pro_options": false,
+    "show_enabledisable_in_quick_settings": false,
+    "show_fixes": false,
+    "zen_uv_fix": false,
+    "show_help": false,
+    "show_config_ie": false,
+    "auto_save_keymaps_on_exit": true
+}

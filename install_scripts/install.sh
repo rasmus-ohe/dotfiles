@@ -132,6 +132,7 @@ yay_packages=(
   betterbird-bin  # Thunderbird alternative (mail client)
   tutanota-desktop-bin  # TutaNota mail
   beeper-v4-bin  # Beeper messanger
+  vesktop-bin  # Alternative Discord client
 
   # Hyprland
   hyprshot  # Hyprland screenshot tool
@@ -156,6 +157,7 @@ yay_packages=(
   systemd-ui  # GUI for systemd units
   wtype  # Simulate keyboard input
   wev  # Display input events
+  translate-shell  # CLI translator (using Google, Bing, Yandex, etc.)
 
   # Printing and scanning
   cups  # Pringing system
