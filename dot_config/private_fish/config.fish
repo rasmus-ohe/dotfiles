@@ -22,6 +22,7 @@ abbr cn 'code ~/.config/nvim/'
 
 # cd (move to directory)
 abbr cdh 'cd ~/.config/hypr/'
+abbr cdhs 'cd ~/.config/hypr/scripts/'
 abbr cdc 'cd ~/.local/share/chezmoi/'
 abbr cds 'cd ~/.config/spicetify/'
 abbr cdf 'cd ~/.config/fish/config.fish'
