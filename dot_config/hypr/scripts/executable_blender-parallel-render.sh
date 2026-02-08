@@ -45,7 +45,6 @@ while [ "$i" -le "$INSTANCES" ]; do
             echo 'Rendering frames $CURRENT_START to $CURRENT_END';
             blender -b \"$BLEND_FILE\" \
                 --offline-mode \
-                --factory-startup \
                 -s $CURRENT_START \
                 -e $CURRENT_END \
                 -a;

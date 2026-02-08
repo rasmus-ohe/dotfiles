@@ -22,10 +22,13 @@ abbr cn 'code ~/.config/nvim/'
 
 # cd (move to directory)
 abbr cdh 'cd ~/.config/hypr/'
+abbr cdhs 'cd ~/.config/hypr/scripts/'
 abbr cdc 'cd ~/.local/share/chezmoi/'
 abbr cds 'cd ~/.config/spicetify/'
 abbr cdf 'cd ~/.config/fish/config.fish'
 abbr cdn 'cd ~/.config/nvim/'
+abbr cdb 'cd ~/Documents/Blender/'
+abbr cdbp 'cd ~/Documents/Blender/Projects/'
 
 # Package managers
 abbr pi 'sudo pacman -Syu --noconfirm'
@@ -91,6 +94,12 @@ abbr ca 'cargo add'
 # Wireguard
 abbr wu 'sudo wg-quick up'
 abbr wd 'sudo wg-quick down'
+
+# Transtale
+abbr tef 'trans en:fi'
+abbr tes 'trans en:swe'
+abbr tsf 'trans swe:fi'
+abbr tfs 'trans fi:swe'
 
 # Other
 abbr cl 'clear'
