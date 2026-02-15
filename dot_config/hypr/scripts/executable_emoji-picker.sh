@@ -1887,11 +1887,8 @@ exit
 → right arrow
 ↓ down arrow
 ←↑→↓ all directions up down left right arrows
-AH↗️HA↘️HA↗️HA↘️HA↗️HA↘️HA↗️HA↘️ pekora arrows hahaha rabbit
 • dot circle separator
 「」 japanese quote square bracket
 ¯\_(ツ)_/¯ shrug idk i dont know
 ↵ enter key return
 𝕏  twitter x logo
-👉👈 etou ughhhhhhh shy
-👉👌 put it in imagination perv

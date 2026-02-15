@@ -14,7 +14,7 @@
     "show_quick_reorder": true,
     "show_quick_focus_search_button": false,
     "easy_mode": true,
-    "main_tabs": "Organize",
+    "main_tabs": "Keymaps",
     "remove_uninstalled_addons": true,
     "use_filtering_in_node_editor": true,
     "use_filtering_in_image_editor": true,
@@ -35,7 +35,7 @@
             "icon": "GREASEPENCIL",
             "panels": "Fluid Painter,Fluid Painter NSFW,Fluid Particles",
             "name": "Fluids",
-            "show": true
+            "show": false
         },
         {
             "icon": "MOD_VERTEX_WEIGHT",
@@ -47,11 +47,11 @@
             "icon": "OUTLINER_OB_ARMATURE",
             "panels": "Autogrip,MustardUI,Voxel Heat Diffuse Skinning,MHX Runtime System,Rigify,DAZ importer,Auto-Rig Pro,Auto-Rig Pro Tools,Bone Widget",
             "name": "Rig",
-            "show": true
+            "show": false
         },
         {
             "icon": "CAMERA_DATA",
-            "panels": "Lazy Composer 2",
+            "panels": "Lazy Composer 2,Cameraide",
             "name": "Camera",
             "show": false
         },
@@ -82,7 +82,7 @@
     "show_npanel_renaming": false,
     "show_focus_panel_categories": false,
     "draw_side": "RIGHT",
-    "addons_to_exclude": "Add Camera Rigs,Camera Shakify,LoopTools,Node Wrangler,Pose Library,Cycles Render Engine,Jiggle Physics",
+    "addons_to_exclude": "Add Camera Rigs,Camera Shakify,LoopTools,Node Wrangler,Pose Library,Cycles Render Engine,Jiggle Physics,Custom Camera",
     "addons_to_exclude_node_editor": "",
     "addons_to_exclude_image_editor": "",
     "experimental": false,

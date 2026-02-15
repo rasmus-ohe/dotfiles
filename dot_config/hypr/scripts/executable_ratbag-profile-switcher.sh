@@ -11,6 +11,9 @@ get_device ()
   # Get the number of devices found
   device_count="$(printf "%s\n" "$raw_devices" | wc -l)"
 
+  # Quit if no devices are found
+  [ "$device_count" -eq 0 ] && exit 0
+
   # If only one device is found, use it without prompting the user
   if [ "$device_count" -eq 1 ]; then
     DEVICE="$(printf "%s\n" "$raw_devices" | awk -F: '{print $1}')"
@@ -65,10 +68,25 @@ function choose_profile () {
   echo "$profile"
 }
 
+notify-send -h string:synchronous:ratbagctl "Profile picker" "Ativated"
+
 DEVICE="$(get_device)"
+
+# Exit if no device is selected
+if [ -z "$DEVICE" ]; then
+  notify-send -h string:synchronous:ratbagctl "Profile picker" "No device selected (or no devices found)"
+  exit 0
+fi
+
 DEVICE_NAME="$(ratbagctl "$DEVICE" info | head -n 1 | awk -F' - ' '{print $2}')"
 
 PROFILE="$(choose_profile "$DEVICE")"
 
-notify-send "$DEVICE_NAME" "Profile set to $PROFILE"
+# Exit if no profile is selected
+if [ -z "$PROFILE" ]; then
+  notify-send -h string:synchronous:ratbagctl "Profile picker" "No profile selected"
+  exit 0
+fi
+
+notify-send -h string:synchronous:ratbagctl "$DEVICE_NAME" "Profile set to $PROFILE"
 ratbagctl "$DEVICE" profile active set "$PROFILE"
