@@ -39,6 +39,20 @@ abbr yin 'yay -Syu --noconfirm --needed'
 abbr yr 'yay -Rns'
 abbr yq 'yay -Qu'
 
+# Git
+abbr gp 'git push'
+abbr gf 'git fetch'
+## checkout
+abbr gcm 'git checkout master'
+abbr gcc 'git checkout combined'
+abbr gcl 'git checkout laptop'
+abbr gcd 'git checkout desktop'
+## merge
+abbr gmm 'git merge master'
+abbr gmc 'git merge combined'
+abbr gml 'git merge laptop'
+abbr gmd 'git merge desktop'
+
 # Hyprland
 abbr rh 'hyprctl reload'  # Reload hyprland
 
