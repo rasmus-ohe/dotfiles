@@ -196,6 +196,7 @@ yay_packages=(
   cpio  #
   activitywarch-bin  # Application time tracker
   fd  # Alternative to 'find' command (required for fzf.fish)
+  bluez-utils  # Bluez (bluetooth) utility
 )
 
 # Install packages (AUR)
