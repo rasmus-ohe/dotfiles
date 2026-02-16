@@ -201,6 +201,12 @@
             "display_name": "",
             "addons": "bone_widget",
             "ordered": ""
+        },
+        {
+            "name": "Camera",
+            "display_name": "",
+            "addons": "cameraide_settings",
+            "ordered": ""
         }
     ],
     "addon_info_for_renaming": [
@@ -371,6 +377,14 @@
             "identifier": "bl_ext.blender_org.bone_widget",
             "space": "VIEW_3D",
             "backup_tab_name": "Rigging"
+        },
+        {
+            "name": "cameraide_settings",
+            "display_name": "Cameraide",
+            "tab_name": "Camera",
+            "identifier": "bl_ext.blender_org.cameraide_settings",
+            "space": "VIEW_3D",
+            "backup_tab_name": "Camera"
         }
     ],
     "addon_info_index": 3,
