@@ -26,7 +26,7 @@ notify() {
 devices=$(get_bt_devices)
 
 [ -z "$devices" ] && {
-  notify-send -t 2000 -h string:synchronous:bt-connect "No paired Bluetooth devices"
+  notify "No paired Bluetooth devices"
   exit 0
 }
 
