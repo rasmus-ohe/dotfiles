@@ -9,7 +9,7 @@ notify() {
 error_exit() {
   echo "System update error: $1"
   notify "Failed: $1"
-  mpv --really-quiet --no-video ~/.config/hypr/audio/error.mp3
+  mpv --really-quiet --no-video ~/.config/hypr/audio/error.ogg
   exit 1
 }
 
@@ -32,4 +32,4 @@ if command -v flatpak >/dev/null 2>&1; then
 fi
 
 notify "All complete"
-mpv --really-quiet --no-video ~/.config/hypr/audio/cute-level-up.mp3
+mpv --really-quiet --no-video ~/.config/hypr/audio/cute-level-up.ogg
