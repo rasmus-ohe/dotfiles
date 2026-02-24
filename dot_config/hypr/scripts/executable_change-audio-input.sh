@@ -1,26 +1,22 @@
 #!/bin/sh
 
-list=$(pactl list sources | awk '
-  /^Source #/ {
-    if (id) printf "[%s] %s\n", id, desc;
-    id = substr($2, 2);
-    desc = "";
-    next
-  }
-  /^[[:space:]]*Description:/ {
-    desc = $0;
-    sub(/^[[:space:]]*Description:[[:space:]]*/, "", desc);
-    next
-  }
-  END {
-    if (id) printf "[%s] %s\n", id, desc
-  }
+# Get current default source name
+current=$(pactl info | awk -F': ' '/Default Source:/ {print $2}')
+
+# Build list with state indicator
+list=$(pactl -f json list sources | jq -r --arg current "$current" '
+  .[] |
+  (if .name == $current then "● " else "○ " end)
+  + .description
 ')
 
 [ -z "$list" ] && exit 0
 
-choice=$(printf "%s\n" "$list" | fuzzel --dmenu)
+choice=$(printf "%s\n" "$list" | fuzzel --dmenu --placeholder 'Input device')
 [ -z "$choice" ] && exit 0
 
-sid=$(printf "%s" "$choice" | cut -d']' -f1 | tr -d '[' | tr -d ' ')
+# Extract numeric source index
+sid=$(printf "%s" "$choice" | sed -E 's/^[●○] \[([0-9]+)\].*/\1/')
+
 pactl set-default-source "$sid"
+

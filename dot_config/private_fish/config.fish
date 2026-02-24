@@ -31,9 +31,11 @@ abbr cdb 'cd ~/Documents/Blender/'
 abbr cdbp 'cd ~/Documents/Blender/Projects/'
 
 # Package managers
+## Pacman
 abbr pi 'sudo pacman -Syu --noconfirm'
 abbr pr 'sudo pacman -Rcns'
 abbr pc 'sudo pacman -Rcns $(pacman -Qdtq)'
+## yay
 abbr yi 'yay -Syu --noconfirm'
 abbr yin 'yay -Syu --noconfirm --needed'
 abbr yr 'yay -Rns'
