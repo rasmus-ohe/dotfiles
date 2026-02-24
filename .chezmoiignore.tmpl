@@ -1,12 +1,12 @@
 **/fish_variables
 **/UserAccount.dat
 
-# chezmoi
-**/install_guides/
-**/install_scripst/
-**/README.md
+# Chezmoi
+install_guides/**
+install_scripts/**
+README.md
 
-# ignore entire cache directory anywhere under ~/.config
+# Ignore entire cache directory anywhere under ~/.config
 **/cache/
 **/cache/**
 **/__pycache__/
@@ -14,26 +14,17 @@
 **/.cache/
 **/.cache/**
 
-# ignore temporary fish files
+# Ignore temporary fish files
 **/*.tmp.*
 
-# ignore Blender extensions
-**/blender/**/extensions/**
-**/blender/**/scripts/**
-**/blender/**/recent-files.txt
-**/blender/**/recent-searches.txt
-**/blender/**/platform_support.txt
-**/blender/**/bookmarks.txt
-**/blender/**/cloudrig.json
-**/blender/**/datafiles/**
-## Clean panels
-**/blender/**/cp-keymaps/**
-**/blender/**/CP-Backups/**
-**/blender/**/CP-Addons To Load on Boot.txt
+# Blender
+**/blender/*/config/*
+!**/blender/*/config/startup.blend
+!**/blender/*/config/userpref.blend
 
-# ignore hyprland display and workspace config
+# Ignore hyprland display and workspace config
 **/hypr/monitors.conf
 **/hypr/workspaces.conf
 
-# other
+# Other
 **/gtk-3.0/bookmarks
