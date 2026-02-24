@@ -113,7 +113,6 @@ yay_packages=(
   playerctl  # Aufio control with shortcuts
   mpv  # Media player
   audacity  # Audio editor
-  kdenlive  # Video editor
 
   # Web browsers
   firefox  # Basic firefox
