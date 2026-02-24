@@ -1,0 +1,14 @@
+[Unit]
+Description=ydotool daemon
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ydotoold \
+  --socket-path=/run/user/1000/.ydotool_socket \
+  --socket-own=1000:1000
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
