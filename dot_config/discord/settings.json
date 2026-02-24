@@ -9,8 +9,14 @@
   "WINDOW_BOUNDS": {
     "x": 0,
     "y": 0,
-    "width": 1920,
-    "height": 1080
+    "width": 2240,
+    "height": 1400
   },
-  "SKIP_HOST_UPDATE": true
+  "SKIP_HOST_UPDATE": true,
+  "openasar": {
+    "setup": true,
+    "noTyping": true,
+    "quickstart": true
+  },
+  "trayBalloonShown": true
 }
