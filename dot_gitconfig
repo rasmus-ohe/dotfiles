@@ -6,4 +6,6 @@
 	helper = !/usr/bin/gh auth git-credential
 [user]
 	name = ramus-ohe
-	email = rassemichael@gmail.com
+  	email = rassemichael@gmail.com
+[core]
+ 	editor = vim
