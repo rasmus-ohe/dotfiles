@@ -47,7 +47,7 @@
             "icon": "OUTLINER_OB_ARMATURE",
             "panels": "Autogrip,MustardUI,Voxel Heat Diffuse Skinning,MHX Runtime System,Rigify,DAZ importer,Auto-Rig Pro,Auto-Rig Pro Tools,Bone Widget",
             "name": "Rig",
-            "show": false
+            "show": true
         },
         {
             "icon": "CAMERA_DATA",
@@ -508,10 +508,10 @@
         "filter_enabled": true,
         "filter_enabled_node_editor": false,
         "filter_enabled_image_editor": false,
-        "enabled_0": false,
+        "enabled_0": true,
         "enabled_1": false,
         "enabled_2": false,
-        "enabled_3": true,
+        "enabled_3": false,
         "enabled_4": false,
         "enabled_5": false,
         "enabled_6": false,
