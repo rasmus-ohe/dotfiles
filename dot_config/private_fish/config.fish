@@ -54,6 +54,8 @@ abbr gmm 'git merge master'
 abbr gmc 'git merge combined'
 abbr gml 'git merge laptop'
 abbr gmd 'git merge desktop'
+## Lazygit
+abbr lz 'lazygit'
 
 # Hyprland
 abbr rh 'hyprctl reload'  # Reload hyprland
