@@ -113,6 +113,7 @@ yay_packages=(
   playerctl  # Aufio control with shortcuts
   mpv  # Media player
   audacity  # Audio editor
+  playerctld-systemd-unit  # Daemon for playerctl
 
   # Web browsers
   firefox  # Basic firefox
