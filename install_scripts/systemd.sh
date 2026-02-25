@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Link service file(s)
+sudo ln -s ~/.config/hypr/services/ydotoold.service /etc/systemd/system/ 
+
 systemctl --user enable --now hyprshade.timer
 systemctl --user enable --now playerctld.service
 

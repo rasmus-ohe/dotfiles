@@ -12,9 +12,9 @@ get_bt_devices() {
     else
       state="○"
     fi
-
-    # Display column (state + name) + machine column (MAC)
-    printf "%s %s\t%s\n" "$state" "$name" "$mac"
+    
+    # Format for fuzzel
+    echo "$state $name\t$state\t$name\t$mac"
   done
 }
 
@@ -22,43 +22,39 @@ notify() {
   notify-send -t 2000 -h string:synchronous:bt-connect "Bluetooth" "$1" 
 }
 
-
+# Get all paired bluetooth devices
 devices=$(get_bt_devices)
 
+# Exit if no devies have been paired
 [ -z "$devices" ] && {
   notify "No paired Bluetooth devices"
   exit 0
 }
 
-selected=$(printf "%s\n" "$devices" | \
-           fuzzel --dmenu --with-nth=1 --prompt="Bluetooth")
+# User selects a device to (dis)connect
+read state name mac < <(
+  printf "$devices" | \
+  fuzzel --dmenu --with-nth=1 --accept-nth={2..} \
+  --prompt="Bluetooth connection" --minimal-lines -R
+)
 
-[ -z "$selected" ] && exit 0
-
-# Extract fields
-selected_label=${selected%%$'\t'*}
-selected_mac=${selected#*$'\t'}
-
-# Parse state + name
-state=${selected_label%% *}
-device_name=${selected_label#? }
-
+# Check the state
 if [ "$state" = "●" ]; then
-  notify "Disconnecting: $device_name"
+  notify "Disconnecting: $name"
 
   # Currently connected → disconnect
-  if bluetoothctl disconnect "$selected_mac" > /dev/null 2>&1; then
-    notify "Disconnected: $device_name"
+  if bluetoothctl disconnect "$mac" > /dev/null 2>&1; then
+    notify "Disconnected: $name"
   else
-    notify "Failed to disconnect: $device_name"
+    notify "Failed to disconnect: $name"
   fi
 else
-  notify "Trying to connect: $device_name"
+  notify "Trying to connect: $name"
 
   # Currently disconnected → connect
-  if bluetoothctl connect "$selected_mac" > /dev/null 2>&1; then
-    notify "Connected: $device_name"
+  if bluetoothctl connect "$mac" > /dev/null 2>&1; then
+    notify "Connected: $name"
   else
-    notify "Failed to connect: $device_name"
+    notify "Failed to connect: $name"
   fi
 fi

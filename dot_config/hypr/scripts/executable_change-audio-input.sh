@@ -1,5 +1,9 @@
 #!/bin/sh
 
+notify() {
+  notify-send -t 5000 "Audio device" "$1"
+}
+
 # Get current default source name
 current=$(pactl info | awk -F': ' '/Default Source:/ {print $2}')
 
@@ -7,16 +11,23 @@ current=$(pactl info | awk -F': ' '/Default Source:/ {print $2}')
 list=$(pactl -f json list sources | jq -r --arg current "$current" '
   .[] |
   (if .name == $current then "● " else "○ " end)
-  + .description
+  + .description + "\t" + .name
 ')
 
-[ -z "$list" ] && exit 0
+# Exit if no devices in list
+if [ -z "$list" ]; then
+  notify "No available input devies!"
+  exit 0
+fi
 
-choice=$(printf "%s\n" "$list" | fuzzel --dmenu --placeholder 'Input device')
-[ -z "$choice" ] && exit 0
+# Choose new audio input; or exit if no selection (-R)
+choice=$(
+  echo "$list" \
+  | fuzzel --dmenu --placeholder 'Input device'  \
+  --with-nth=1 --accept-nth={2} -R --minimal-lines
+)
 
-# Extract numeric source index
-sid=$(printf "%s" "$choice" | sed -E 's/^[●○] \[([0-9]+)\].*/\1/')
-
-pactl set-default-source "$sid"
-
+# Set chosen device as new input
+if pactl set-default-sink "$choice" > /dev/null 2>&1; then
+  notify "Could not set input device!"
+fi

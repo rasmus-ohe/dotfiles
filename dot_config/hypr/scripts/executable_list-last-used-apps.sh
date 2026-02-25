@@ -11,19 +11,15 @@ clients=$(hyprctl clients -j | jq -r '
 ')
 
 if [ -z "$clients" ]; then
-  notify-send -t 2000 -h string:synchronous:list-last-used-apps "No open applications"
+  notify-send -t 2000 -h string:synchronous:list-open-software "No open applications"
   exit 0
 fi
 
-selected=$(printf "%s\n" "$clients" | \
-           fuzzel --dmenu --with-nth=1 --prompt="Recent windows")
-
-[ -z "$selected" ] && exit 0
-
-# Extract tab-separated fields
-rest=${selected#*$'\t'}
-workspace_id=${rest%%$'\t'*}
-address=${selected##*$'\t'}
+read workspace_id address < <(
+  printf "$clients" | \
+  fuzzel --dmenu --prompt="Recent applications" \
+  --with-nth=1 --accept-nth={2..} -R
+)
 
 # Jump + focus
 hyprctl dispatch workspace "$workspace_id" > /dev/null
