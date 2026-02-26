@@ -86,4 +86,4 @@ for dev in $devices; do
 done
 
 # Send notification if there is any device
-[ -n "$msg" ] && notify-send -t 5000 -h string:synchronous:battery-capacity  "Battery capacity" "$(echo -e "$msg")"
+[ -n "$msg" ] && notify-send -t 10000 -h string:synchronous:battery-capacity  "Battery capacity" "$(echo -e "$msg")"

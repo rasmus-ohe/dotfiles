@@ -14,7 +14,7 @@ get_bt_devices() {
     fi
     
     # Format for fuzzel
-    echo "$state $name\t$state\t$name\t$mac"
+    printf '%s\t%s;%s;%s\n' "$state $name" "$state" "$name" "$mac"
   done
 }
 
@@ -32,10 +32,10 @@ devices=$(get_bt_devices)
 }
 
 # User selects a device to (dis)connect
-read state name mac < <(
-  printf "$devices" | \
-  fuzzel --dmenu --with-nth=1 --accept-nth={2..} \
-  --prompt="Bluetooth connection" --minimal-lines -R
+IFS=$';' read -r state name mac < <(
+  printf "%s" "$devices" | \
+  fuzzel --dmenu --with-nth=1 --accept-nth=2 \
+    --prompt="Bluetooth connection" --minimal-lines -R
 )
 
 # Check the state
@@ -43,7 +43,7 @@ if [ "$state" = "●" ]; then
   notify "Disconnecting: $name"
 
   # Currently connected → disconnect
-  if bluetoothctl disconnect "$mac" > /dev/null 2>&1; then
+  if bluetoothctl disconnect "$mac"; then
     notify "Disconnected: $name"
   else
     notify "Failed to disconnect: $name"
@@ -52,7 +52,7 @@ else
   notify "Trying to connect: $name"
 
   # Currently disconnected → connect
-  if bluetoothctl connect "$mac" > /dev/null 2>&1; then
+  if bluetoothctl connect "$mac"; then
     notify "Connected: $name"
   else
     notify "Failed to connect: $name"
