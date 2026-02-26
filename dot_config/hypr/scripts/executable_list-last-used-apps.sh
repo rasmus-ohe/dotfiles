@@ -17,8 +17,8 @@ fi
 
 read workspace_id address < <(
   printf "$clients" | \
-  fuzzel --dmenu --prompt="Recent applications" \
-  --with-nth=1 --accept-nth={2..} -R
+  fuzzel --dmenu --placeholder="Recent applications" \
+  --with-nth=1 --accept-nth={2..} -R --minimal-lines
 )
 
 # Jump + focus
