@@ -27,7 +27,10 @@ choice=$(
   --with-nth=1 --accept-nth={2} -R --minimal-lines
 )
 
+[ -z "$choice" ] && exit 0
+
 # Set chosen device as new input
-if pactl set-default-sink "$choice" > /dev/null 2>&1; then
+if ! pactl set-default-source "$choice"; then
   notify "Could not set input device!"
+  exit 1
 fi

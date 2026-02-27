@@ -14,8 +14,6 @@ list=$(pactl -f json list sinks | jq -r --arg current "$current" '
   + .description + "\t" + .name
 ')
 
-echo "$list"
-
 # Exit if no devices in list
 if [ -z "$list" ]; then
   notify "No output devies!"
@@ -29,7 +27,10 @@ choice=$(
   --with-nth=1 --accept-nth={2} -R --minimal-lines
 )
 
+[ -z "$choice" ] && exit 0
+
 # Set chosen device as new input
-if pactl set-default-sink "$choice" > /dev/null 2>&1; then
+if ! pactl set-default-sink "$choice"; then
   notify "Could not set output device"
+  exit 1
 fi
