@@ -119,6 +119,13 @@ abbr tes 'trans en:swe'
 abbr tsf 'trans swe:fi'
 abbr tfs 'trans fi:swe'
 
+# Chezmoi
+abbr chs 'chezmoi status'
+abbr cha 'chezmoi add'
+abbr chf 'chezmoi forget'
+abbr chap 'chezmoi apply'
+abbr chapd 'chezmoi apply --dry-run'
+
 # Other
 abbr cl 'clear'
 abbr yz 'yazi'
