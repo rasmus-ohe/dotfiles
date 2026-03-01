@@ -40,6 +40,7 @@ abbr yi 'yay -Syu --noconfirm'
 abbr yin 'yay -Syu --noconfirm --needed'
 abbr yr 'yay -Rns'
 abbr yq 'yay -Qu'
+abbr ys 'yay -Ss'
 
 # Git
 abbr gp 'git push'

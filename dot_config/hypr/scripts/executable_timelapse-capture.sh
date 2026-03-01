@@ -42,9 +42,9 @@ while true; do
 
     if [ "$ACTIVE_CLASS" = "$WINDOW_CLASS" ]; then
         TS=$(date '+%Y_%m_%d_%H%M%S')
-        grim -t jpeg -q 95 -o "$MONITOR" \
+        grim -t jpg -q 95 -o "$MONITOR" \
             "$OUTDIR/capture_${TS}.jpeg"
-        echo "Captured: capture_${TS}.jpeg"
+        echo "Captured: capture_${TS}.jpg"
     else
         echo "Skipped (active window: ${ACTIVE_CLASS:-none})"
     fi
