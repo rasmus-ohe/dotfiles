@@ -38,6 +38,8 @@ IFS=$';' read -r state name mac < <(
     --prompt="Bluetooth connection" --minimal-lines -R
 )
 
+[ -z "$state" ] && exit 0
+
 # Check the state
 if [ "$state" = "●" ]; then
   notify "Disconnecting: $name"
