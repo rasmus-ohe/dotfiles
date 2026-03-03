@@ -111,9 +111,9 @@ yay_packages=(
   vlc-plugins-all  # Different codec support
   spotify-edge  # Spotify-client
   playerctl  # Aufio control with shortcuts
+  playerctld-systemd-unit  # Daemon for playerctl
   mpv  # Media player
   audacity  # Audio editor
-  playerctld-systemd-unit  # Daemon for playerctl
 
   # Web browsers
   firefox  # Basic firefox
