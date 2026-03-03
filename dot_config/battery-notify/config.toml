@@ -10,7 +10,7 @@ sleep_pct = 5
 # The command to run when sleeping. Bear in mind that if you run as an
 # unprivileged user, you may need to consider elevation, either with NOPASSWD
 # or things like polkit.
-sleep_command = 'playerctl pause 2> /dev/null || systemctl suspend'
+sleep_command = 'playerctl pause 2> /dev/null; systemctl hibernate'
 
 # If this many monitors are connected (that is, plugged in -- they can be off)
 # and we are discharging, show a warning. Intended to avoid cases where power

@@ -15,7 +15,7 @@ fi
 
 # Pass to fuzzel, showing workspace number and app class
 read workspace_id address < <(
-  printf "$clients" | \
+  printf "%s" "$clients" | \
   fuzzel --dmenu --placeholder="Open applications" \
   --with-nth=1 --accept-nth={2..} -R --minimal-lines
 )
