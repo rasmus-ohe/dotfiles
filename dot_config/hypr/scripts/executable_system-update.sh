@@ -19,8 +19,8 @@ fi
 
 notify "Starting system update..."
 
-# Run yay upgrade using pkexec for escalation
-if ! yay -Syu --noconfirm --sudo pkexec; then
+# System update
+if ! yay -Syu --noconfirm; then
     error_exit "System"
 fi
 

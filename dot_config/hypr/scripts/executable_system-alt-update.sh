@@ -9,7 +9,7 @@ notify() {
 error_exit() {
   echo "Alt System update error: $1"
   notify "Update failed: $1"
-  mpv --really-quiet --no-video ~/.config/hypr/audio/error.mp3
+  mpv --really-quiet --no-video ~/.config/hypr/audio/error.ogg
   exit 1
 }
 
@@ -26,4 +26,4 @@ if ! fish -c "fisher update"; then
 fi
 
 notify "All complete"
-mpv --really-quiet --no-video ~/.config/hypr/audio/cute-level-up.mp3
+mpv --really-quiet --no-video ~/.config/hypr/audio/cute-level-up.ogg
