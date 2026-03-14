@@ -132,7 +132,6 @@ yay_packages=(
   betterbird-bin  # Thunderbird alternative (mail client)
   tutanota-desktop-bin  # TutaNota mail
   beeper-v4-bin  # Beeper messanger
-  vesktop-bin  # Alternative Discord client
 
   # Hyprland
   hyprshot  # Hyprland screenshot tool
