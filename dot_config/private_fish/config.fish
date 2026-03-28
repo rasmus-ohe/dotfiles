@@ -127,6 +127,9 @@ abbr chf 'chezmoi forget'
 abbr chap 'chezmoi apply'
 abbr chapd 'chezmoi apply --dry-run'
 
+abbr copy 'wl-copy'
+abbr clipboard 'wl-copy'
+
 # Other
 abbr cl 'clear'
 abbr yz 'yazi'
