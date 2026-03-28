@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 current="$(hyprshade current)"
-filter="warm-blue-light-filter"
+filter="super-warm"
 
 if [ -z "$current" ]; then
   args=(on "$filter")
