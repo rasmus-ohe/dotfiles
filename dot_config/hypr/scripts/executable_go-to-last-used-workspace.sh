@@ -2,7 +2,7 @@
 
 
 notify() {
-  notify-send -h string:synchronous:go-to-last-app "$1" "$2"
+  notify-send -h string:synchronous:go-to-last-app "󰑎 $1" "$2"
 }
 
 current_workspace_id=$(hyprctl activeworkspace -j | jq -r '.id')

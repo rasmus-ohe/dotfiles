@@ -11,14 +11,16 @@ printhelp() {
    echo "  -c <class>   The Hyprland (hyprctl) class name of the application"
    echo "  -l <launch>  The command to launch the application"
    echo "  -p <print>   The name to print in the notification (optional, defaults to the class name; first letter capitalized)"
+   echo "  -i <icon>    An icon to showcase in the notification"
    exit 1
 }
 
-while getopts "c:l:p:h:" opt; do
+while getopts "c:l:p:i:h:" opt; do
    case "$opt" in
       c ) HYPR_CLASS="$OPTARG" ;;
       l ) LAUNCH_CMD="$OPTARG" ;;
       p ) NAME_PRINT="$OPTARG" ;;
+      i ) ICON="$OPTARG" ;;
       h ) printhelp ;;
       * ) printhelp ;;
    esac
@@ -41,6 +43,10 @@ if [ -z "$NAME_PRINT" ]; then
    NAME_PRINT=${HYPR_CLASS^}
 fi
 
+if [ -n "$ICON" ]; then
+  ICON="${ICON} "
+fi
+
 # Get the workspace ID of the application with the given class name
 WS_ID="$(hyprctl clients -j \
   | jq -r --arg cls "$HYPR_CLASS" \
@@ -50,10 +56,10 @@ WS_ID="$(hyprctl clients -j \
 
 # If the workspace ID is not empty, jump to the workspace and focus the windo
 if [ -n "$WS_ID" ]; then
-  notify-send -h string:synchronous:hyprctl-jump "Jumping to $NAME_PRINT" "Workspace $WS_ID"
+  notify-send -h string:synchronous:hyprctl-jump "${ICON}Jumping to $NAME_PRINT" "Workspace $WS_ID"
   hyprctl dispatch workspace "$WS_ID"
   hyprctl dispatch focuswindow "class:$HYPR_CLASS"
 else # If the workspace ID is empty, launch the application
-  notify-send -h string:synchronous:hyprctl-jump "Launching $NAME_PRINT"
+  notify-send -h string:synchronous:hyprctl-jump "${ICON}Launching $NAME_PRINT"
   sh -c "$LAUNCH_CMD" &
 fi
