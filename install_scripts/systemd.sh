@@ -5,6 +5,7 @@ sudo cp ~/.config/hypr/services/ydotoold.service /etc/systemd/system/
 
 systemctl --user enable --now hyprshade.timer
 systemctl --user enable --now playerctld.service
+systemctl --user enable --now syncthing.service
 
 sudo systemctl enable cups.socket
 sudo systemctl enable docker.socket

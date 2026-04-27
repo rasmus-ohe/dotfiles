@@ -105,6 +105,7 @@ yay_packages=(
   exfatprogs  # ExFAT formatting
   gnome-disk-utility  # Disk Management Utility
   glow  # Markdown viewer in terminal
+  obsidian-bin  # Note-taking
 
   # Media
   vlc  # Media player
