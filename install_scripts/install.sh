@@ -72,6 +72,7 @@ yay_packages=(
   noto-fonts-emoji
   ttf-droid  # Required for vscode
   ttf-fira-code  # For coding
+  ttf-ibm-plex  # Just a nice looking font
 
   # Files
   gvim  # vim + plugins
@@ -173,6 +174,18 @@ yay_packages=(
   wl-clipboard  # Wayland clipboard
   wl-clip-persist  # Clipboard persistence
   cliphist  # Clipboard history manager
+
+  # Latex
+  texlive-basic
+  texlive-latexrecommended
+  texlive-latexextra
+  texlive-fontsextra
+  texlive-xetex
+  texlive-bibtexextra
+  texlive-binextra
+  tex-fmt-bin
+  biber
+
 
   # Other
   flatseal  # Flatpak permissions manager
