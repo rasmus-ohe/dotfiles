@@ -186,6 +186,9 @@ yay_packages=(
   tex-fmt-bin
   biber
 
+  # Python
+  python
+  uv  # Package manager
 
   # Other
   flatseal  # Flatpak permissions manager
