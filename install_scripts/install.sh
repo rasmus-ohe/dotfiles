@@ -173,6 +173,10 @@ yay_packages=(
   wl-clip-persist  # Clipboard persistence
   cliphist  # Clipboard history manager
 
+  # Python
+  python
+  uv  # Package manager
+
   # Other
   flatseal  # Flatpak permissions manager
   hyprpolkitagent  # Popup for root password
