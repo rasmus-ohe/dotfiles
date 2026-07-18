@@ -1,35 +1,32 @@
 #!/bin/sh
+
+#!/bin/sh
 set -eu
 
 notify() {
-  echo "System update: $1"
-  notify-send -h string:synchronous:sys-update -t 5000 " System Update" "$1"
+  echo "System Update: $1"
+  notify-send -h string:synchronous:alt-sys-update -t 5000 " System Update" "$1"
 }
 
 error_exit() {
   echo "System update error: $1"
-  notify "Failed: $1"
+  notify "Update failed: $1"
   mpv --really-quiet --no-video ~/.config/hypr/audio/error.ogg
   exit 1
 }
 
-if ! pgrep -x hyprpolkitagent >/dev/null 2>&1; then
-  error_exit "hyprpolkitagent is not running."
+# --- hyprpm update ---
+notify "System..."
+if ! yay -Syu --noconfirm --needed; then
+    error_exit "System update failed"
 fi
 
-notify "Starting system update..."
-
-# System update
-if ! yay -Syu --noconfirm; then
-    error_exit "System"
-fi
-
-notify "System packages updated."
-
-if command -v flatpak >/dev/null 2>&1; then
-    notify "Starting Flatpak update..."
-    flatpak update -y || error_exit "Flatpak"
+# --- fisher update ---
+notify "Flatpak..."
+if ! fish -c "flatpak update -y"; then
+    error_exit "Flatpak update failed"
 fi
 
 notify "All complete"
 mpv --really-quiet --no-video ~/.config/hypr/audio/cute-level-up.ogg
+

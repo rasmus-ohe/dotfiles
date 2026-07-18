@@ -1,0 +1,10 @@
+[Unit]
+Description=ActivityWatch Hyprland window watcher
+
+[Service]
+ExecStart=%h/.cargo/bin/aw-watcher-window-hyprland
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=default.target

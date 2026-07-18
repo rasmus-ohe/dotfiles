@@ -11,7 +11,7 @@ clients=$(hyprctl clients -j | jq -r '
 ')
 
 if [ -z "$clients" ]; then
-  notify-send -t 2000 -h string:synchronous:list-open-software "No open applications"
+  notify-send -t 2000 -h string:synchronous:list-open-software " No open applications"
   exit 0
 fi
 

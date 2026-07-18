@@ -36,8 +36,8 @@ abbr pi 'sudo pacman -Syu --noconfirm'
 abbr pr 'sudo pacman -Rcns'
 abbr pc 'sudo pacman -Rcns $(pacman -Qdtq)'
 ## yay
-abbr yi 'yay -Syu --noconfirm'
-abbr yin 'yay -Syu --noconfirm --needed'
+abbr yi 'yay -Syu --noconfirm --disable-download-timeout'
+abbr yin 'yay -Syu --noconfirm --needed --disable-download-timeout'
 abbr yr 'yay -Rns'
 abbr yq 'yay -Qu'
 abbr ys 'yay -Ss'
@@ -109,6 +109,10 @@ abbr cbr 'cargo build --release'
 abbr crr 'cargo run --release'
 abbr cw 'cargo watch -x run'
 abbr ca 'cargo add'
+
+# Docker
+abbr dcu 'docker compose up'
+abbr dcd 'docker compose down'
 
 # Wireguard
 abbr wu 'sudo wg-quick up'

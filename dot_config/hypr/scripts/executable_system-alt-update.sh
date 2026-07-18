@@ -16,7 +16,7 @@ error_exit() {
 # --- hyprpm update ---
 notify "Hyprland packages (hyprpm)..."
 if ! hyprpm update; then
-    error_exit "hyprpm update failed"
+    error_exit "Hyprpm update failed"
 fi
 
 # --- fisher update ---
