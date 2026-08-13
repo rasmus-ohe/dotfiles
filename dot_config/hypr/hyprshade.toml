@@ -4,5 +4,5 @@ default = true  # will be activated when no other shader is scheduled
 
 [[shades]]
 name = "super-warm"
-start_time = 05:00:00
+start_time = 22:00:00
 end_time = 06:00:00   # optional if more than one shader has start_time
