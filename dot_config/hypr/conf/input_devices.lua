@@ -23,7 +23,7 @@ hl.config({
 	},
 
 	gestures = {
-		workspace_swipe_forever = true,
+		workspace_swipe_forever = false,
 		workspace_swipe_create_new = false,
 	}
 })

@@ -3,7 +3,7 @@ for _, filename in pairs({
     "brightness",
     "focus",
     "media",
-    "power",
+    "special",
     "resize",
     "screenshot",
 }) do

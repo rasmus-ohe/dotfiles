@@ -118,28 +118,31 @@ BindDsp(MainModShift, "Q", hl.dsp.window.kill()) -- Kill all similar windows to 
 
 BindExec(MainModCtrlShift, "R", "hyprctl reload") -- Reload Hyprland
 
-BindExec(MainMod, "S", "hyprctl dispatch exec [workspace special] foot -e btop") -- System monitor
-BindDsp(MainModAlt, "S", hl.dsp.workspace.toggle_special(nil)) -- Toggle special workspace
-BindExec(MainModCtrl, "S", HyprScript("toggle-hyprshade")) -- Toggle hyprshade
-BindExec(MainModShift, "S", "footclient -e ncdu") -- Disk usage analyzer
-BindExec(MainModCtrlAlt, "S", "hyprshade on grayscale") -- Grayscale mode
+-- BindExec(MainMod, "S", "hyprctl dispatch exec [workspace special] foot -e btop") -- System monitor
+BindDsp(MainMod, "S", hl.dsp.exec_cmd(
+    [[ footclient --title "btop-monitor" -e btop]]
+))
+BindDsp(MainModAlt, "S", hl.dsp.workspace.toggle_special("magic")) -- Toggle special workspace
+BindExec(MainModCtrl, "S", HyprScript("toggle-hyprshade"))         -- Toggle hyprshade
+BindExec(MainModShift, "S", "footclient -e ncdu")                  -- Disk usage analyzer
+BindExec(MainModCtrlAlt, "S", "hyprshade on grayscale")            -- Grayscale mode
 
-BindExec(MainMod, "T", "footclient") -- Terminal
-BindExec(MainModCtrl, "T", "toggle-touchpad") -- Toggle touchpad
-BindExec(MainModShift, "T", fileManager .. " trash://") -- Trash
+BindExec(MainMod, "T", "footclient")                               -- Terminal
+BindExec(MainModCtrl, "T", "toggle-touchpad")                      -- Toggle touchpad
+BindExec(MainModShift, "T", fileManager .. " trash://")            -- Trash
 
 -- TODO: Update system
-BindExec(
-    MainMod,
-    "U",
-    [[hyprctl dispatch exec [workspace special] foot -e script -q -O /tmp/system-update-$(date +%Y%m%d-%H%M%S).log -c ~/.config/hypr/scripts/system-update.sh >/dev/null 2>&1]]
-) -- Update system
+-- BindExec(
+--     MainMod,
+--     "U",
+--     [[footclient -e script -q -O /tmp/system-update-$(date +%Y%m%d-%H%M%S).log -c ~/.config/hypr/scripts/system-update.sh >/dev/null 2>&1]]
+-- ) -- Update system
 -- TODO: Alternative system updater
-BindExec(
-    MainModAlt,
-    "U",
-    [[hyprctl dispatch exec [workspace special] foot -e script -q -O /tmp/system-alt-update-$(date +%Y%m%d-%H%M%S).log -c ~/.config/hypr/scripts/system-alt-update.sh >/dev/null 2>&1]]
-)                                                               -- Other system updates
+-- BindExec(
+--     MainModAlt,
+--     "U",
+--     [[hyprctl dispatch exec [workspace special] foot -e script -q -O /tmp/system-alt-update-$(date +%Y%m%d-%H%M%S).log -c ~/.config/hypr/scripts/system-alt-update.sh >/dev/null 2>&1]]
+-- )                                                               -- Other system updates
 
 BindExec(MainModCtrl, "V", HyprScript("vpn-menu"))              -- Fuzzel VPN menu
 
@@ -149,15 +152,14 @@ BindExec(
     "W",
     NotifyCmd({
         sync = "workspace",
-        title = "󰍹 Current workspace",
-        body =
-        "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | if .specialWorkspace.id == -99 then \"Special\" else .activeWorkspace.id end')",
+        title =
+        "󰍹 Current workspace: $(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | if .specialWorkspace.id == -99 then \"Special\" else .activeWorkspace.id end')",
     })
 )                                                              -- Notify the current workspace id
 BindExec(MainModShift, "W", HyprScript("list-last-used-apps")) -- List last used apps in fuzzel
 BindExec(MainModCtrlShift, "W", HyprScript("hold-key"))
 
-BindFunc(MainMod, "Z", function()
+BindDsp(MainMod, "Z", function()
     local ZOOM_LEVEL = 2.5
     local MIN_ZOOM = 1
     local current_zoom = hl.get_config("cursor.zoom_factor")

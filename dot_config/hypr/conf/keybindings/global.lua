@@ -24,12 +24,9 @@ function BindExec(mod, key, cmd, flags)
     hl.bind(BuildKeybind(mod, key), hl.dsp.exec_cmd(cmd), flags)
 end
 
+-- Also works with functions
 function BindDsp(mod, key, dispatcher, flags)
     hl.bind(BuildKeybind(mod, key), dispatcher, flags)
-end
-
-function BindFunc(mod, key, func, flags)
-    hl.bind(BuildKeybind(mod, key), func, flags)
 end
 
 -- Notify command

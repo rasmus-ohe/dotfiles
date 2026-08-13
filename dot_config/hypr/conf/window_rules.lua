@@ -58,3 +58,10 @@ hl.window_rule({
 	match = { xwayland = true, class = "^$", title = "^$" },
 	float = true,
 })
+
+-- Open btop monitor into special workspace
+hl.window_rule({
+	name = "btop-monitor",
+	match = { title = "^btop-monitor$" },
+	workspace = "special",
+})
