@@ -29,10 +29,44 @@ local function jumpOrLaunch(opts)
     return HyprScript(cmd)
 end
 
+local function batteryStatusNotif()
+    local pipeline = [[
+        capacity="$(< /sys/class/power_supply/BAT0/capacity)";
+        status="$(< /sys/class/power_supply/BAT0/status)";
+
+        if [ "$status" = "Charging" ]; then
+            icon="󰂄"
+        elif [  "$capacity" -ge 80 ]; then
+            icon="󰁹"
+        elif [ "$capacity" -ge 50 ]; then
+            icon="󰂂"
+        elif [ "$capacity" -ge 20 ]; then
+            icon="󰁿"
+        else
+            icon="󰁺"
+        fi
+
+        time_str="$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "time" | xargs)"
+        if [ "$status" = "Charging" ]; then
+            remove_prfx="time to full: "
+        else
+            remove_prfx="time to empty: "
+        fi
+        status_txt="${status} [${time_str#"$remove_prfx"} left]"
+    ]]
+
+    return pipeline .. " " ..
+        NotifyCmd({
+            title = "$icon Battery: $capacity%",
+            body = "$status_txt",
+            sync = "battery-status",
+            timeout = 3000
+        })
+end
+
 
 -- Bindings
 BindExec("XF86Calculator", "", calculator)
-BindExec(MainMod, "Escape", HyprScript("hypr-blank") .. " && notify-send Escaped") -- Moves all monitors to a blank screen
 BindExec(
     MainModCtrl,
     "A",
@@ -63,8 +97,10 @@ BindExec(
     MainMod,
     "E",
     jumpOrLaunch({ l = "thunderbird", c = "eu.thunderbird.Thunderbird", p = "Thunderbird", i = "󰇮" })
-)                                                               -- Email client
+) -- Email client
 BindExec(MainModShift, "E", HyprScript("emoji-picker", "copy")) -- Emoji picker
+BindExec(MainModCtrl, "E",
+    jumpOrLaunch({ l = "easyeffects", c = "com.github.wwmm.easyeffects", p = "EasyEffects", icon = "" })) -- EasyEffects
 
 BindExec(MainMod, "F", fileManager)
 BindExec(MainModAlt, "F", "footclient -e yazi")     -- Terminal file manager (yazi)
@@ -99,14 +135,15 @@ BindExec(
     MainMod,
     "O",
     NotifyCmd({
-        timeout = 4000,
-        sync = "date_time",
         title = "󰥔 Current Time",
         body = "$(date '+%H:%M:%S - %A - %d/%m/%Y')",
+        sync = "date_time",
+        timeout = 4000,
     })
 )
 BindExec(MainModCtrl, "O", HyprScript("change-audio-output")) -- Change output audio device
-BindExec(MainModShift, "O", HyprScript("battery-status-notify")) -- Battery of laptop battery
+BindExec(MainModCtrlAlt, "O", HyprScript("change-easyeffect-output-preset"))
+BindExec(MainModShift, "O", batteryStatusNotif()) -- Battery of laptop battery
 BindExec(MainModAltShift, "O", HyprScript("device-battery-status")) -- Battery of all devices
 
 BindExec(MainMod, "P", "hyprpicker -a -q && notify-send \"󰏘 Color copied to clipboard\"") -- Color picker

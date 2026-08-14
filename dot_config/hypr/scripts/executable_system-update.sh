@@ -1,7 +1,6 @@
 #!/bin/sh
 
-#!/bin/sh
-set -eu
+# set -eu
 
 notify() {
   echo "System Update: $1"

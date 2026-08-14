@@ -77,6 +77,7 @@ yay_packages=(
   # Files
   gvim  # vim + plugins
   neovim  # vim on steroids
+  tree-sitter-cli # Required for nvim
   udisks2 # Backend DBus service
   udiskie  # Lightweight auto-mounting daemon that uses udisks2
   nemo  # File manager

@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu
+# set -eu
 
 notify() {
   echo "Alt System Update: $1"
