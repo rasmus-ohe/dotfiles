@@ -2,11 +2,11 @@
 
 ## Installation
 
-`yay -Syu --noconfirm docker docker-compoes`
+`yay -Syu --noconfirm docker docker-compose`
 
 It is recommended to restart the machine for all installations to take effect
 
-## Start docker daemon
+## Start docker daemon (recommended)
 
 `sudo systemctl start docker.service`
 
@@ -18,6 +18,6 @@ It is recommended to restart the machine for all installations to take effect
 
 `sudo usermod -aG docker $USER`
 
-## Verifry docker installation
+## Verify docker installation
 
 `docker run hello-world`

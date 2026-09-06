@@ -4,7 +4,7 @@ Simulates key- and mouse-events
 
 ## Link
 
-Github: https://github.com/ReimuNotMoe/ydotool
+[GitHub](https://github.com/ReimuNotMoe/ydotool)
 
 ## Setup
 

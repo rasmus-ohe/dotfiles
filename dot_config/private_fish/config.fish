@@ -124,6 +124,10 @@ abbr tes 'trans en:swe'
 abbr tsf 'trans swe:fi'
 abbr tfs 'trans fi:swe'
 
+# Microphone check
+abbr mc 'pw-loopback -m -1 &'
+abbr mic-check 'pw-loopback -m -1 &'
+
 # Chezmoi
 abbr chs 'chezmoi status'
 abbr cha 'chezmoi add'

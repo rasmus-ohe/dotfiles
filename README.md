@@ -32,10 +32,10 @@ chezmoi apply
 
 ## Install scripts (directory)
 
-These scripts are used to install the programs. \
-Opening the files will give you a better understanding of what packages will be installed.
+For ease of installation, just run the `master-install.sh` script. \
+This will run all the scripts in the `scripts` directory.
 
-**PLEASE** run the `install.sh` script first to minimize the risk of errors.
+Optionally, you can individually run the `.sh` files in the `scripts` directory.
 
 ## Install guides (directory)
 
