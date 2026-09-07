@@ -1,0 +1,6 @@
+{
+    "device": "alsa_output.pci-0000_03_00.6.analog-stereo",
+    "device-description": "Ryzen HD Audio Controller Analog Stereo",
+    "device-profile": "Speakers",
+    "preset-name": "Laptop - Advanced Auto Gain"
+}

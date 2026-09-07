@@ -7,7 +7,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("dbus-update-activation-environment --systemd HYPRLAND_INSTANCE_SIGNATURE") -- Hyprshade auto-scheduling
 	hl.exec_cmd("foot --server") -- Required to use foot clients
 	hl.exec_cmd("udiskie -ant") -- automatic mounting
-	hl.exec_cmd("systemctl --user start hyprpolkitagent")
+	hl.exec_cmd("systemctl --user start hyprpolkitagent") --Polkitagent
 	hl.exec_cmd("hypridle") -- Idle daemon
 	hl.exec_cmd("hyprpm reload") -- Reload hyprpm
 	hl.exec_cmd("wl-paste --watch cliphist store") -- Stores only text data
@@ -15,6 +15,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1") -- Set audio to 10%
 	hl.exec_cmd("awatcher --no-tray") -- Activitywatch
 	hl.exec_cmd("easyeffects -b 1 > /dev/null  2>&1") -- EasyEffects
+	hl.exec_cmd("mbsync -a; /home/rasmus/.config/hypr/scripts/new-mail-notifier.sh") -- Fetch all mail
 end)
 
 -- Exec (run every reload)

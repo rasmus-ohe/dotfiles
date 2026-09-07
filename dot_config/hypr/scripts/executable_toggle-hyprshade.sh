@@ -7,7 +7,7 @@ filter="super-warm"
 if [ -z "$current" ] || [ "$current" == "vibrance" ]; then
   args=(on "$filter")
 else
-  args=(off)
+  args=(on vibrance)
 fi
 
 hyprshade "${args[@]}"

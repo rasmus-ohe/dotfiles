@@ -1,0 +1,4 @@
+[watchers]
+autostart = [
+  "aw-watcher-media-player"
+]

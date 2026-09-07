@@ -7,13 +7,20 @@ end
 # Neovim
 alias vi='nvim'
 abbr nv 'nvim'
+abbr n. 'nvim .'
 abbr nh 'nvim ~/.config/hypr/'
+abbr nhs 'nvim ~/.config/hypr/scripts/'
 abbr nc 'nvim ~/.local/share/chezmoi/'
 abbr ns 'nvim ~/.config/spicetify/'
 abbr nf 'nvim ~/.config/fish/config.fish'
 abbr nn 'nvim ~/.config/nvim/'
 
+# Neomutt
+abbr mutt 'neomutt'
+abbr nm 'neomutt'
+
 # VSCode
+abbr c. 'code .'
 abbr ch 'code ~/.config/hypr/'
 abbr cc 'code ~/.local/share/chezmoi/'
 abbr cs 'code ~/.config/spicetify/'
@@ -36,8 +43,8 @@ abbr pi 'sudo pacman -Syu --noconfirm'
 abbr pr 'sudo pacman -Rcns'
 abbr pc 'sudo pacman -Rcns $(pacman -Qdtq)'
 ## yay
-abbr yi 'yay -Syu --noconfirm --disable-download-timeout'
-abbr yin 'yay -Syu --noconfirm --needed --disable-download-timeout'
+abbr yi 'yay -S --noconfirm --needed --disable-download-timeout'
+abbr yiu 'yay -Syu --noconfirm --needed --disable-download-timeout'
 abbr yr 'yay -Rns'
 abbr yq 'yay -Qu'
 abbr ys 'yay -Ss'
@@ -103,6 +110,7 @@ abbr man 'tldr'
 alias mann='man'
 
 # Rust (cargo)
+abbr cn 'cargo new'
 abbr cb 'cargo build'
 abbr cr 'cargo run'
 abbr cbr 'cargo build --release'
@@ -112,7 +120,11 @@ abbr ca 'cargo add'
 
 # Docker
 abbr dcu 'docker compose up'
-abbr dcd 'docker compose down'
+abbr dcub 'docker compose up --build'
+abbr dcd 'docker compose down --remove-orphans'
+abbr dcr 'docker compose start'
+abbr dcs 'docker compose stop'
+abbr dcl 'docker compose logs --follow'
 
 # Wireguard
 abbr wu 'sudo wg-quick up'
@@ -124,10 +136,6 @@ abbr tes 'trans en:swe'
 abbr tsf 'trans swe:fi'
 abbr tfs 'trans fi:swe'
 
-# Microphone check
-abbr mc 'pw-loopback -m -1 &'
-abbr mic-check 'pw-loopback -m -1 &'
-
 # Chezmoi
 abbr chs 'chezmoi status'
 abbr cha 'chezmoi add'
@@ -138,9 +146,16 @@ abbr chapd 'chezmoi apply --dry-run'
 abbr copy 'wl-copy'
 abbr clipboard 'wl-copy'
 
+# cat
+abbr cat 'bat'
+alias catt 'cat'
+
 # Other
+abbr o. 'open .'
 abbr cl 'clear'
 abbr yz 'yazi'
+abbr mkcd 'mkdir-cd'
+abbr mc 'mkdir-cd'
 
 fish_add_path /home/rasmus/.spicetify
 fish_add_path /home/rasmus/.local/bin/

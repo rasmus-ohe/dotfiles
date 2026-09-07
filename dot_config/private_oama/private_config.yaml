@@ -1,0 +1,24 @@
+encryption:
+  tag: KEYRING
+
+services:
+  google:
+    client_id: 406964657835-aq8lmia8j95dhl1a2bvharmfk3t1hgqj.apps.googleusercontent.com
+    client_secret: kSmqreRr0qwBWJgbf5Y-PjSU
+
+  microsoft:
+    access_type: null
+    auth_endpoint: https://login.microsoftonline.com/common/oauth2/v2.0/devicecode
+    auth_http_method: GET
+    auth_params_mode: QueryString
+    auth_scope:
+      https://outlook.office.com/IMAP.AccessAsUser.All https://outlook.office.com/POP.AccessAsUser.All
+      https://outlook.office.com/SMTP.Send offline_access
+    client_id: 9e5f94bc-e8a4-4e73-b8be-63364c29d753
+    client_secret: null
+    prompt: null
+    redirect_uri: null
+    tenant: common
+    token_endpoint: https://login.microsoftonline.com/common/oauth2/v2.0/token
+    token_http_method: POST
+    token_params_mode: RequestBodyForm

@@ -54,6 +54,10 @@ function NotifyCmd(opts)
     return table.concat(parts, " ")
 end
 
+function ExecNofityCmd(opts)
+    return hl.exec_cmd(NotifyCmd(opts))
+end
+
 -- Paths
 function HyprScript(filename, args)
     if args == nil then
@@ -61,4 +65,12 @@ function HyprScript(filename, args)
     end
 
     return "~/.config/hypr/scripts/" .. filename .. ".sh" .. " " .. args
+end
+
+function TwoDecimalPlaces(value)
+    return math.floor(value * 100 + 0.5) / 100
+end
+
+function HyprReload()
+    hl.exec_cmd("hyprctl reload")
 end

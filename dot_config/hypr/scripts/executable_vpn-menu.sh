@@ -4,7 +4,6 @@ WG_DIR="/etc/wireguard"
 WG_DIR_PERM="755"
 WG_CONF_PERM="600"
 
-
 notify() {
   notify-send "VPN Menu" "$1"
 }

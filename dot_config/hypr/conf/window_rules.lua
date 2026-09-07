@@ -31,6 +31,7 @@ hl.window_rule({
 
 -- Spotify -> workspace 10
 hl.window_rule({ match = { class = "^Spotify$" }, workspace = "10 silent" })
+hl.window_rule({ match = { class = "^rmpc$" }, workspace = "10" })
 
 -- Beeper -> workspace 8
 hl.window_rule({ match = { class = "^Beeper$" }, workspace = "8" })
@@ -64,4 +65,10 @@ hl.window_rule({
 	name = "btop-monitor",
 	match = { title = "^btop-monitor$" },
 	workspace = "special",
+})
+
+hl.window_rule({
+	name = "RecIt",
+	match = { class = "^recit$" },
+	float = true,
 })

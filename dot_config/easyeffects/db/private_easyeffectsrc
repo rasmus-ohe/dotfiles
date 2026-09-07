@@ -1,0 +1,21 @@
+[Presets]
+lastLoadedOutputPreset=Soundcore C40i (speech)
+
+[StreamInputs]
+inputDevice=alsa_input.pci-0000_03_00.6.analog-stereo
+
+[StreamOutputs]
+mostUsedPresets=Soundcore C40i (music),Soundcore C40i (speech),Laptop - Advanced Auto Gain,None,Laptop - LoudnessCrystalEqualizer
+outputDevice=alsa_output.pci-0000_03_00.6.analog-stereo
+plugins=equalizer#0,limiter#0,level_meter#0
+usedPresets=Soundcore C40i (music):15,Soundcore C40i (speech):13,Laptop - Advanced Auto Gain:12,Laptop - LoudnessCrystalEqualizer:4,Laptop - LoudnessEqualizer:3,None:11
+visiblePage=pluginsPage
+visiblePlugin=limiter#0
+
+[Window]
+height=1400
+outputAutoloadingFallbackPreset=None
+outputAutoloadingUsesFallback=true
+visiblePipeWirePage=clientsPage
+visiblePresetSheetPage=autoloadingPage
+width=2240

@@ -64,8 +64,9 @@ for dev in $devices; do
 
     time_str="$(printf "%s\n" "$info" | awk -F': ' '/time to/ {print $0}' | xargs)"
     
-    echo "Timeline: $time_str"
-
+    # For debugging
+    # echo "Timeline: $time_str"
+    
     msg="$msg$symbol $percentage - $model"
 
     if [ -n "$time_str" ]; then
