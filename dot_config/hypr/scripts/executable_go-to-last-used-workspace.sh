@@ -19,8 +19,9 @@ $(hyprctl clients -j | jq -r \
 EOF
 
 if [ -n "$addr" ]; then
-  hyprctl dispatch workspace "$wsid" > /dev/null
-  hyprctl dispatch focuswindow "address:$addr" > /dev/null
+  hyprctl dispatch "hl.dsp.focus({ workspace = $wsid })" > /dev/null
+  hyprctl dispatch "hl.dsp.focus({ window = \"address:$addr\" })" > /dev/null
+
 
   notify "Jumping back to $class" "Workspace: $wsid"
 else

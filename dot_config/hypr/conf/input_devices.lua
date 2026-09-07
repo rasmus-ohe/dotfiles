@@ -1,40 +1,34 @@
--------------
---- Input ---
--------------
+--- Feel
 
 hl.config({
-  input = {
-    kb_layout = "fi,us",
-    kb_options = "grp:win_space_toggle, compose:menu",
-    resolve_binds_by_sym = true, -- resolve_binds_by_sym	Determines how keybinds act when multiple layouts are used.
+	input = {
+		kb_layout = "fi,us",
+		kb_options = "grp:win_space_toggle,compose:menu",
+		-- resolve_binds_by_sym = 1,
+		accel_profile = "flat", -- mouse acceleration: flat=disabled
+		follow_mouse = 1,
+		sensitivity = 0,  -- -1.0 - 1.0 (0 means no modification)
+		touchpad = {
+			natural_scroll = true, -- Inverts scrolling direction
+			disable_while_typing = true,
+		},
+	},
 
-    -- Mouse
-    accel_profile = "flat", -- "flat" = disable acceleration
-    follow_mouse = 1,       -- 1 = Cursor movement will always change focus to the window under the cursor.
-    sensitivity = 0,        -- -1.0 to 1.0; 0.0 = disabled
-
-    touchpad = {
-      natural_scroll = true,      -- 	Inverts scrolling direction. When enabled, scrolling moves content directly, rather than manipulating a scrollbar.
-      disable_while_typing = true -- Disable the touchpad while typing.
-    }
-  }
+	gestures = {
+		workspace_swipe_forever = false,
+		workspace_swipe_create_new = false,
+	}
 })
 
 -- Yoga (laptop) touchpad
 hl.device({
-  name = "msft0001:00-06cb:ce44-touchpad",
-  accel_profile = "adaptive",
-  sensitivity = -0.1
-})
-
-hl.gesture({
-  fingers = 3,
-  direction = "horizontal",
-  action = "workspace"
+	name = "msft0001:00-06cb:ce44-touchpad",
+	accel_profile = "adaptive",
+	sensitivity = -0.1,
 })
 
 -- Corne split keyboard
 hl.device({
-  name = "zmk-project-corne-keyboard",
-  kb_layout = "us"
+	name = "corne-keyboard",
+	kb_layout = "us",
 })

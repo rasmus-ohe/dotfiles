@@ -3,7 +3,8 @@
 current="$(hyprshade current)"
 filter="super-warm"
 
-if [ -z "$current" ]; then
+
+if [ -z "$current" ] || [ "$current" == "vibrance" ]; then
   args=(on "$filter")
 else
   args=(off)

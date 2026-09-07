@@ -1,7 +1,6 @@
 #!/bin/sh
 
-#!/bin/sh
-set -eu
+# set -eu
 
 notify() {
   echo "System Update: $1"
@@ -17,7 +16,7 @@ error_exit() {
 
 # --- hyprpm update ---
 notify "System..."
-if ! yay -Syu --noconfirm --needed; then
+if ! yay -Syu --noconfirm --needed --disable-download-timeout; then
     error_exit "System update failed"
 fi
 

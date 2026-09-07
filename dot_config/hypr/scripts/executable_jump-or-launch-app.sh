@@ -57,8 +57,8 @@ WS_ID="$(hyprctl clients -j \
 # If the workspace ID is not empty, jump to the workspace and focus the windo
 if [ -n "$WS_ID" ]; then
   notify-send -h string:synchronous:hyprctl-jump "${ICON}Jumping to $NAME_PRINT" "Workspace $WS_ID"
-  hyprctl dispatch workspace "$WS_ID"
-  hyprctl dispatch focuswindow "class:$HYPR_CLASS"
+  hyprctl dispatch "hl.dsp.focus({ workspace=$WS_ID })"
+  hyprctl dispatch "hl.dsp.focus({ window=\"class:$HYPR_CLASS\" })"
 else # If the workspace ID is empty, launch the application
   notify-send -h string:synchronous:hyprctl-jump "${ICON}Launching $NAME_PRINT"
   sh -c "$LAUNCH_CMD" &

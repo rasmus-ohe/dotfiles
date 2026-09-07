@@ -21,5 +21,5 @@ read workspace_id address < <(
 )
 
 # Jump + focus
-hyprctl dispatch workspace "$workspace_id" > /dev/null
-hyprctl dispatch focuswindow "address:$address" > /dev/null
+hyprctl dispatch "hl.dsp.focus({ workspace = $workspace_id })" > /dev/null
+hyprctl dispatch "hl.dsp.focus({ window = \"address:$address\" })"

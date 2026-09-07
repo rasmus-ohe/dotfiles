@@ -43,7 +43,6 @@ return {
 				"javascript",
 				"json",
 				"json5",
-				"latex",
 				"lua",
 				"make",
 				"markdown",

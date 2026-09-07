@@ -34,7 +34,7 @@ devices="$(get_bt_devices)"
 IFS=';' read -r state name mac <<EOF
 $(printf "%s" "$devices" | \
   fuzzel --dmenu --with-nth=1 --accept-nth=2 \
-    --prompt="Bluetooth connection" --minimal-lines -R)
+    --placeholder="Bluetooth connection" --minimal-lines -R)
 EOF
 
 [ -z "$state" ] && exit 0
