@@ -6,6 +6,8 @@ packages=(
   tree-sitter-cli ## Required for nvim
   visual-studio-code-bin  # VSCode
   obsidian-bin  # Note-taking
+
+  rawtherapee # Image editing
 )
 
 # Install packages
