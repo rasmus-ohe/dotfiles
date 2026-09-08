@@ -44,7 +44,7 @@ abbr pr 'sudo pacman -Rcns'
 abbr pc 'sudo pacman -Rcns $(pacman -Qdtq)'
 ## yay
 abbr yi 'yay -S --noconfirm --needed --disable-download-timeout'
-abbr yiu 'yay -Syu --noconfirm --needed --disable-download-timeout'
+abbr yu 'yay -Syu --noconfirm --needed --disable-download-timeout'
 abbr yr 'yay -Rns'
 abbr yq 'yay -Qu'
 abbr ys 'yay -Ss'

@@ -9,3 +9,18 @@ hl.monitor({
   sdr_min_luminance = 0.2,
   sdr_max_luminance = 80,
 })
+
+hl.monitor({
+  output = "desc:Microstep MSI MAG272C 0x30303453",
+  disabled = true,
+})
+
+hl.monitor({
+  output = "desc:AOC 24G2WG3- PIPM4JA006993",
+  disabled = true,
+})
+
+hl.monitor({
+  output = "desc:Dell Inc. DELL U2415 08DXD4AP0TAL",
+  disabled = true,
+})

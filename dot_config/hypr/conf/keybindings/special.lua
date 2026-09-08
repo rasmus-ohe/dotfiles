@@ -81,12 +81,12 @@ local function handleLidOpen()
 	end
 end
 
-BindDsp("", "switch:on:Lid Switch", function()
-	handleLidClosed()
-end)
-BindDsp("", "switch:off:Lid Switch", function()
-	handleLidOpen()
-end)
+-- BindDsp("", "switch:on:Lid Switch", function()
+-- 	handleLidClosed()
+-- end)
+-- BindDsp("", "switch:off:Lid Switch", function()
+-- 	handleLidOpen()
+-- end)
 
 local function tempDebug()
 	hl.exec_cmd("beeper", { workspace = "1 silent" })

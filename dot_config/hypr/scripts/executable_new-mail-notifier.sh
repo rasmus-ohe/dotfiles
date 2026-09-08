@@ -1,14 +1,40 @@
 #!/bin/sh
 
-# TODO: Fetch more than just one inbox
-new_inbox_dir_path=~/.mail/gmail/Inbox/new
+# label:path pairs — add new accounts here only
+accounts="
+Gmail:$HOME/.mail/gmail/Inbox/new
+Outlook Ohert:$HOME/.mail/outlook-ohert/Inbox/new
+Outlook Michael:$HOME/.mail/outlook-michael/Inbox/new
+"
 
-# Get amount of files in directory
-new_mail_count=$(find "$new_inbox_dir_path" -type f | wc -l)
+body=""
+total=0
 
-# Exit if no new mail
-[ "$new_mail_count" -eq 0 ] && exit 0
+old_ifs="$IFS"
+IFS='
+'
+for entry in $accounts; do
+  [ -z "$entry" ] && continue
 
-# Notify
-notify-send -t 5000 -h string:synchronous:new-mail " New mail" "Gmail: $new_mail_count"
+  label="${entry%%:*}"
+  path="${entry#*:}"
+
+  [ -d "$path" ] || continue
+
+  count=$(find "$path" -type f | wc -l)
+  [ "$count" -eq 0 ] && continue
+
+  total=$((total + count))
+  if [ -z "$body" ]; then
+    body="$label: $count"
+  else
+    body="$body
+$label: $count"
+  fi
+done
+IFS="$old_ifs"
+
+[ "$total" -eq 0 ] && exit 0
+
+notify-send -t 5000 -h string:synchronous:new-mail " New mail" "$body"
 mpv --really-quiet --no-video ~/.config/hypr/audio/new-mail.ogg
