@@ -3,6 +3,7 @@
 packages=(
   docker  # Containerization platform
   docker-compose  # Tool for defining and running multi-container Docker applications
+  docker-buildx  # Extended docker build
   lazydocker-bin  # TUI for managing Docker
 )
 

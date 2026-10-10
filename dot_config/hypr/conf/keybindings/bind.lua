@@ -119,7 +119,7 @@ BindExec(MainMod, "L", jumpOrLaunch({ l = "net.corluma.Corluma", c = "corluma", 
 BindExec(MainModShift, "L", HyprScript("lenny-picker")) -- Lenny picker (fuzzel)
 
 BindExec(MainMod, "M", jumpOrLaunch({ l = "spotify", c = "Spotify", i = "󰓇" })) -- Spotify
-BindExec(MainModAlt, "M", "footclient --app-id=rmpc --title=rmpc -e rmpc")
+BindExec(MainModAlt, "M", jumpOrLaunch({ l = "footclient --app-id=rmpc --title=rmpc -e rmpc", c = "rmpc", i = "󰝚" }))
 BindExec(MainModCtrl, "M", "toggle-mic-mute") -- Toggle (default) mic mute status
 BindExec(MainModShift, "M", jumpOrLaunch({ l = "beeper", c = "Beeper", p = "Beeper", i = "󰍡" })) -- Beeper
 BindExec(MainModCtrlShift, "M", "toggle-mouse-hold")
@@ -145,12 +145,13 @@ BindExec(MainModAltShift, "O", HyprScript("device-battery-status")) -- Battery o
 
 BindExec(MainMod, "P", 'hyprpicker -a -q && notify-send "󰏘 Color copied to clipboard"') -- Color picker
 BindExec(MainModCtrl, "P", HyprScript("power-profile-picker")) -- Power profile picker
-BindExec(MainModShift, "P", HyprScript("mpc-queue-playlist")) -- Clear queue, and set playlist in new queue
+BindExec(MainModShift, "P", HyprScript("mpc-queue-picker")) -- Clear queue, and set playlist in new queue
 BindExec(MainModCtrlAlt, "P", HyprScript("ratbag-profile-switcher")) -- Change Logitech mouse profile
 
 BindDsp(MainMod, "Q", hl.dsp.window.close()) -- Kill active window
 BindDsp(MainModShift, "Q", hl.dsp.window.kill()) -- Kill all similar windows to the active
 
+BindExec(MainMod, "R", HyprScript("rmpc-rate-song")) -- Rate current rmpc song
 BindExec(MainModCtrlShift, "R", "hyprctl reload") -- Reload Hyprland
 
 -- BindExec(MainMod, "S", "hyprctl dispatch exec [workspace special] foot -e btop") -- System monitor

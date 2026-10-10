@@ -1,5 +1,11 @@
 --- Start on boot
 
+local function update_check()
+	local pipeline = [[
+    updates=$()
+  ]]
+end
+
 -- Autostart
 hl.on("hyprland.start", function()
 	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
@@ -15,7 +21,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1") -- Set audio to 10%
 	hl.exec_cmd("awatcher --no-tray") -- Activitywatch
 	hl.exec_cmd("easyeffects -b 1 > /dev/null  2>&1") -- EasyEffects
-	hl.exec_cmd("mbsync -a; /home/rasmus/.config/hypr/scripts/new-mail-notifier.sh") -- Fetch all mail
+	hl.exec_cmd("$HOME/.config/hypr/scripts/new-mail-notifier.sh -a") -- Fetch all mail
+	hl.exec_cmd("$HOME/.config/hypr/scripts/update_check.sh") -- Notify of new updates
 end)
 
 -- Exec (run every reload)

@@ -19,10 +19,10 @@ echo "Copying foot wrapper..."
 sudo cp ../bin/foot-wrapper.fish /usr/local/bin/
 
 
-# Install fish shell
+# Install fish shell (and fish plugin-manager)
 if ! is_installed fish; then
   echo "Installing fish shell..."
-  sudo pacman -S --noconfirm fish
+  sudo pacman -S --noconfirm fish fisher
 else
   echo "fish shell is installed."
 fi
@@ -38,9 +38,6 @@ fi
 
 # Set fish as default shell
 chsh -s "$(which fish)"
-
-# Install Fisher plugin-manager
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 
 # Install fisher plugins
 fisher install IlanCosman/tide@v6  # Tide theme (similiar to p10k for zsh)
