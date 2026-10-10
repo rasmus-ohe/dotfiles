@@ -5,4 +5,5 @@ packages=(
   man  # Manual pages
   translate-shell  # CLI translator
   tealdeer  # Modernized `man`
+  pacman-contrib  # `checkupdates` command
 )

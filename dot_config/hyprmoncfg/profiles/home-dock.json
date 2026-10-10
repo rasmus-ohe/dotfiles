@@ -1,0 +1,147 @@
+{
+  "name": "Home dock",
+  "created_at": "2026-09-07T12:43:37.919563632Z",
+  "updated_at": "2026-09-07T12:46:53.60465401Z",
+  "outputs": [
+    {
+      "key": "aoc|24g2wg3-|pipm4ja006993",
+      "match_key": "aoc|24g2wg3-|pipm4ja006993",
+      "name": "DVI-I-2",
+      "description": "AOC 24G2WG3- PIPM4JA006993",
+      "make": "AOC",
+      "model": "24G2WG3-",
+      "serial": "PIPM4JA006993",
+      "enabled": true,
+      "mode": "1920x1080@60.00Hz",
+      "width": 1920,
+      "height": 1080,
+      "refresh": 60,
+      "x": 89,
+      "y": -2232,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    },
+    {
+      "key": "dell inc.|dell u2415|08dxd4ap0tal",
+      "match_key": "dell inc.|dell u2415|08dxd4ap0tal",
+      "name": "DP-1",
+      "description": "Dell Inc. DELL U2415 08DXD4AP0TAL",
+      "make": "Dell Inc.",
+      "model": "DELL U2415",
+      "serial": "08DXD4AP0TAL",
+      "enabled": true,
+      "mode": "1920x1200@59.95Hz",
+      "width": 1920,
+      "height": 1200,
+      "refresh": 59.95,
+      "x": 2009,
+      "y": -1545,
+      "scale": 1,
+      "transform": 1,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    },
+    {
+      "key": "microstep|msi mag272c|0x30303453",
+      "match_key": "microstep|msi mag272c|0x30303453",
+      "name": "DVI-I-1",
+      "description": "Microstep MSI MAG272C 0x30303453",
+      "make": "Microstep",
+      "model": "MSI MAG272C",
+      "serial": "0x30303453",
+      "enabled": true,
+      "mode": "1920x1080@60.00Hz",
+      "width": 1920,
+      "height": 1080,
+      "refresh": 60,
+      "x": 89,
+      "y": -1152,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    },
+    {
+      "key": "lenovo group limited|0x89b2",
+      "match_key": "lenovo group limited|0x89b2",
+      "name": "eDP-1",
+      "description": "Lenovo Group Limited 0x89B2",
+      "make": "Lenovo Group Limited",
+      "model": "0x89B2",
+      "enabled": false,
+      "mode": "2240x1400@60.00Hz",
+      "width": 2240,
+      "height": 1400,
+      "refresh": 60,
+      "x": -231,
+      "y": -72,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "auto",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    }
+  ],
+  "workspaces": {
+    "enabled": true,
+    "strategy": "manual",
+    "max_workspaces": 10,
+    "group_size": 3,
+    "monitor_order": [
+      "lenovo group limited|0x89b2",
+      "aoc|24g2wg3-|pipm4ja006993",
+      "microstep|msi mag272c|0x30303453",
+      "dell inc.|dell u2415|08dxd4ap0tal"
+    ],
+    "rules": [
+      {
+        "workspace": "1",
+        "output_key": "microstep|msi mag272c|0x30303453",
+        "output_name": "DVI-I-1",
+        "default": true
+      },
+      {
+        "workspace": "2",
+        "output_key": "dell inc.|dell u2415|08dxd4ap0tal",
+        "output_name": "DP-1",
+        "default": true
+      },
+      {
+        "workspace": "10",
+        "output_key": "aoc|24g2wg3-|pipm4ja006993",
+        "output_name": "DVI-I-2",
+        "default": true
+      },
+      {
+        "workspace": "f[1]",
+        "output_key": ""
+      },
+      {
+        "workspace": "w[tv1]",
+        "output_key": ""
+      }
+    ]
+  },
+  "exec": ""
+}

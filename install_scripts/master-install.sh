@@ -43,6 +43,7 @@ install "file-managers"
 install "file-viewing"
 install "file-sharing"
 install "file-tools"
+install "photos"
 install "office"
 
 # Other

@@ -1,8 +1,33 @@
 {
-  "name": "desktop",
-  "created_at": "2026-09-06T18:28:51.726232668Z",
-  "updated_at": "2026-09-06T18:28:51.727246904Z",
+  "name": "Cepter",
+  "created_at": "2026-09-28T09:05:03.293407655Z",
+  "updated_at": "2026-09-28T09:05:03.29450167Z",
   "outputs": [
+    {
+      "key": "invalid vendor codename - rtk|cnano156|8r33926o00qs",
+      "match_key": "invalid vendor codename - rtk|cnano156|8r33926o00qs",
+      "name": "DP-1",
+      "description": "Invalid Vendor Codename - RTK CNANO156 8R33926O00QS",
+      "make": "Invalid Vendor Codename - RTK",
+      "model": "CNANO156",
+      "serial": "8R33926O00QS",
+      "enabled": true,
+      "mode": "1920x1080@60.65Hz",
+      "width": 1920,
+      "height": 1080,
+      "refresh": 60.65,
+      "x": -1280,
+      "y": 1,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    },
     {
       "key": "lenovo group limited|0x89b2",
       "match_key": "lenovo group limited|0x89b2",
@@ -15,7 +40,7 @@
       "width": 2240,
       "height": 1400,
       "refresh": 60,
-      "x": 0,
+      "x": 640,
       "y": 0,
       "scale": 1,
       "transform": 0,
@@ -34,6 +59,7 @@
     "max_workspaces": 9,
     "group_size": 3,
     "monitor_order": [
+      "invalid vendor codename - rtk|cnano156|8r33926o00qs",
       "lenovo group limited|0x89b2"
     ],
     "rules": [

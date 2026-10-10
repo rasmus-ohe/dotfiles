@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# All input parameters are passed to mbsync
+# Mbsync command omly runs, if params given
+mbsync_params="$@"
+
+if [ -n "$mbsync_params" ]; then
+  mbsync $mbsync_params
+fi
+
 # label:path pairs — add new accounts here only
 accounts="
 Gmail:$HOME/.mail/gmail/Inbox/new

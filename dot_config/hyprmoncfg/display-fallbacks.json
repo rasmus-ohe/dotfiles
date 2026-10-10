@@ -1,0 +1,16 @@
+{
+  "dell inc. dell u2415 08dxd4ap0tal": {
+    "step": 0,
+    "reason": "",
+    "saved": "",
+    "since": "2026-10-04T16:09:11.722402429+03:00",
+    "gentle_wake": true
+  },
+  "microstep msi mag272c 0x30303453": {
+    "step": 0,
+    "reason": "",
+    "saved": "",
+    "since": "2026-10-04T16:41:50.003334263+03:00",
+    "gentle_wake": true
+  }
+}

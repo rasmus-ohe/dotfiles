@@ -4,6 +4,8 @@ if status is-interactive
 end
 
 ## Abbreviations
+abbr e 'exit'
+
 # Neovim
 alias vi='nvim'
 abbr nv 'nvim'
@@ -119,8 +121,9 @@ abbr cw 'cargo watch -x run'
 abbr ca 'cargo add'
 
 # Docker
-abbr dcu 'docker compose up'
-abbr dcub 'docker compose up --build'
+abbr dcu 'docker compose up -d'
+abbr dcub 'docker compose up -d --build'
+abbr dcuf 'docker compose up -d --force-recreate'
 abbr dcd 'docker compose down --remove-orphans'
 abbr dcr 'docker compose start'
 abbr dcs 'docker compose stop'

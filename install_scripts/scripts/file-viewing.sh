@@ -4,7 +4,7 @@ packages=(
   zathura   # PDF/image viewer
   zathura-cb  # Comic books support
   zathura-pdf-mupdf # EPUB, PDF and XPS support based on MuPDF
-  gwenview  # Image viewer
+  gwenview  # Image viewer (GUI)
   glow  # Markdown viewer in terminal
 )
 

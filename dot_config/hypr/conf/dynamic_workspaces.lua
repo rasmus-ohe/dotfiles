@@ -22,6 +22,9 @@ require("conf.keybindings.global")
 --     hl.exec_cmd(NotifyCmd({ title = "Workspace moved to monitor", body = workspace .. " -> " .. monitor.name, timeout = 10000 }))
 -- end)
 --
--- hl.on("monitor.removed", function(monitor)
---     hl.exec_cmd(NotifyCmd({ title = "monitor removed", body = monitor.name, timeout = 10000 }))
--- end)
+hl.on("monitor.removed", function(monitor)
+	-- Check if only one monitor left
+	
+
+	-- hl.exec_cmd(NotifyCmd({ title = "monitor removed", body = monitor.name, timeout = 10000 }))
+end)

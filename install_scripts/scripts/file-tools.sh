@@ -10,6 +10,7 @@ packages=(
   lsd   # Modernized `ls`
   fd    # Alternative to 'find' command (required for fzf.fish)
   cpio  # Copy files in and out of archives
+  xdg-ninja  # Checks unwanted files/directories in $HOME
 )
 
 # Install packages
