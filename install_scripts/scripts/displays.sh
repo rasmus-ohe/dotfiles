@@ -9,4 +9,5 @@ packages=(
 yay -S --noconfirm --needed "${packages[@]}"
 
 # Enable services
+systemctl --user daemon-reload
 systemctl --user enable --now hyprmoncfg.service

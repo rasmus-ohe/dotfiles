@@ -6,7 +6,8 @@ packages=(
   nm-connection-editor  # Network manager GUI
   network-manager-applet  # Applet for managing network connections
   iftop  # TUI network monitor
-  ufw  # Netfilter firewall 
+  ufw  # Netfilter firewall
+  tufw # TUI for ufw
   wireguard-tools  # Tools for configuring Wireguard
   systemd-resolvconf  # Configure systemd-resolved
   speedtest++  # Network speed test
