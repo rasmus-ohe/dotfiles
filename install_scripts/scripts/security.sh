@@ -3,11 +3,12 @@
 packages=(
   keepassxc  # Offline password manager
   bitwarden  # Password manager
+  pass  # CLI password store
 
   gnome-keyring ## Required by ente-auth-bin
   libsecret ## Required by ente-auth-bin
-  seahorse # Keyring GUI
   ente-auth-bin  # 2FA manager
+  seahorse # Keyring GUI
 )
 
 # Install packages
