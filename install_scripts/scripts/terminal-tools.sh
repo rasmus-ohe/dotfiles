@@ -7,3 +7,7 @@ packages=(
   tealdeer  # Modernized `man`
   pacman-contrib  # `checkupdates` command
 )
+
+# Install packages
+yay -S --noconfirm --needed "${packages[@]}"
+

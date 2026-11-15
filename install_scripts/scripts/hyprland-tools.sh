@@ -6,6 +6,7 @@ packages=(
   hyprlock  # Session lock
   hyprpicker  # Color picker
   hypr-zoom  # Zoom-tool
+  hyprshutdown  # Safe shutdown
   hyprpolkitagent  # Popup for root password
 )
 

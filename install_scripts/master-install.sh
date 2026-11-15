@@ -1,7 +1,9 @@
 #!/bin/bash
 
 install() {
+  (
     source "$install_dir_path/$1.sh"
+  )
 }
 
 # Directory with the install scripts
@@ -11,7 +13,7 @@ install_dir_path="$HOME/.local/share/chezmoi/install_scripts/scripts"
 sudo pacman -Syu --noconfirm
 
 # Remove unwanted packages
-sudo pacman -Rns --noconfirm vim
+sudo pacman -Rns --noconfirm vim >/dev/null 2>&1
 
 # System
 install "yay"
