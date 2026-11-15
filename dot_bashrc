@@ -8,3 +8,9 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
+# >>> Photon CLI >>>
+case ":$PATH:" in
+  *:'/home/rasmus/.photon/bin':*) ;;
+  *) export PATH="$PATH":'/home/rasmus/.photon/bin' ;;
+esac
+# <<< Photon CLI <<<

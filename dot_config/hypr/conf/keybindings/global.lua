@@ -11,66 +11,103 @@ NewTerminal = "footclient -e"
 NewTerminalHold = "footclient -e --hold"
 SpecialExec = "hyprctl dispatch exec [workspace special] foot -e"
 
+-- Debugging/Logging
+local inspect = require("inspect")
+function P(...)
+	print(inspect(...))
+end
+
+-- Basic
+function capitalize(s)
+	return (s:gsub("^%l", string.upper))
+end
+
+function workspaceOfClass(class)
+	for _, w in ipairs(hl.get_windows()) do
+		if w.class == class then
+			return w.workspace.id
+		end
+	end
+end
+
 -- Bind functions
 function BuildKeybind(mod, key)
-    if mod == "" then
-        return key
-    else
-        return mod .. " + " .. key
-    end
+	if mod == "" then
+		return key
+	else
+		return mod .. " + " .. key
+	end
 end
 
 function BindExec(mod, key, cmd, flags)
-    hl.bind(BuildKeybind(mod, key), hl.dsp.exec_cmd(cmd), flags)
+	hl.bind(BuildKeybind(mod, key), hl.dsp.exec_cmd(cmd), flags)
 end
 
 -- Also works with functions
 function BindDsp(mod, key, dispatcher, flags)
-    hl.bind(BuildKeybind(mod, key), dispatcher, flags)
+	hl.bind(BuildKeybind(mod, key), dispatcher, flags)
 end
 
 -- Notify command
-function NotifyCmd(opts)
-    local parts = { "notify-send" }
+function hyprNotify(opts)
+	local notif = opts.notif
+	opts.timeout = opts.timeout or 3000
+	opts.icon = opts.icon or "info"
 
-    if opts.timeout then
-        table.insert(parts, "-t " .. opts.timeout)
-    end
-    if opts.sync then
-        table.insert(parts, "-h string:synchronous:" .. opts.sync)
-    end
-    if opts.value then
-        table.insert(parts, "-h int:value:" .. opts.value)
-    end
-    if opts.urgency then
-        table.insert(parts, "-u " .. opts.urgency)
-    end
+	if notif and notif:is_alive() then
+		notif:set_text(opts.text)
+		notif:set_timeout(opts.timeout)
+	else
+		notif = hl.notification.create(opts)
+	end
 
-    table.insert(parts, '"' .. opts.title .. '"')
-    if opts.body then
-        table.insert(parts, '"' .. opts.body .. '"')
-    end
-
-    return table.concat(parts, " ")
+	return notif
 end
 
-function ExecNofityCmd(opts)
-    return hl.exec_cmd(NotifyCmd(opts))
+function NotifyCmd(opts)
+	local parts = { "notify-send" }
+
+	if opts.timeout then
+		table.insert(parts, "-t " .. opts.timeout)
+	end
+	if opts.sync then
+		table.insert(parts, "-h string:synchronous:" .. opts.sync)
+	end
+	if opts.value then
+		table.insert(parts, "-h int:value:" .. opts.value)
+	end
+	if opts.icon then
+		table.insert(parts, "-i " .. opts.icon)
+	end
+	if opts.urgency then
+		table.insert(parts, "-u " .. opts.urgency)
+	end
+
+	table.insert(parts, '"' .. opts.title .. '"')
+	if opts.body then
+		table.insert(parts, '"' .. opts.body .. '"')
+	end
+
+	return table.concat(parts, " ")
+end
+
+function ExecNotifyCmd(opts)
+	return hl.exec_cmd(NotifyCmd(opts))
 end
 
 -- Paths
 function HyprScript(filename, args)
-    if args == nil then
-        args = ""
-    end
+	if args == nil then
+		args = ""
+	end
 
-    return "~/.config/hypr/scripts/" .. filename .. ".sh" .. " " .. args
+	return "~/.config/hypr/scripts/" .. filename .. ".sh" .. " " .. args
 end
 
 function TwoDecimalPlaces(value)
-    return math.floor(value * 100 + 0.5) / 100
+	return math.floor(value * 100 + 0.5) / 100
 end
 
 function HyprReload()
-    hl.exec_cmd("hyprctl reload")
+	hl.exec_cmd("hyprctl reload")
 end

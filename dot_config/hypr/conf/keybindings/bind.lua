@@ -1,103 +1,72 @@
 --- Binded keybindings
 
 require("conf.keybindings.global")
+require("conf.keybindings.bind_functions")
 
 local settings = "foot -e nvim ~/.config/hypr/"
-local fileManager = "nemo"
-local menu = "fuzzel"
-local calculator = "gnome-calculator"
-local browser = "zen-browser"
-local browser_private = "zen-browser --private-window"
-
-local function jumpOrLaunch(opts)
-	local cmd = "jump-or-launch-app.sh "
-
-	if opts.l then
-		cmd = cmd .. "-l '" .. opts.l .. "' "
-	end
-	if opts.c then
-		cmd = cmd .. "-c '" .. opts.c .. "' "
-	end
-	if opts.p then
-		cmd = cmd .. "-p '" .. opts.p .. "' "
-	end
-	if opts.i then
-		cmd = cmd .. "-i '" .. opts.i .. "' "
-	end
-
-	return HyprScript(cmd)
-end
-
-local function batteryStatusNotif()
-	local pipeline = [[
-        capacity="$(< /sys/class/power_supply/BAT0/capacity)";
-        status="$(< /sys/class/power_supply/BAT0/status)";
-
-        if [ "$status" = "Charging" ]; then
-            icon="󰂄"
-        elif [  "$capacity" -ge 80 ]; then
-            icon="󰁹"
-        elif [ "$capacity" -ge 50 ]; then
-            icon="󰂂"
-        elif [ "$capacity" -ge 20 ]; then
-            icon="󰁿"
-        else
-            icon="󰁺"
-        fi
-
-        time_str="$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "time" | xargs)"
-        if [ "$status" = "Charging" ]; then
-            remove_prfx="time to full: "
-        else
-            remove_prfx="time to empty: "
-        fi
-        status_txt="${status} [${time_str#"$remove_prfx"} left]"
-    ]]
-
-	return pipeline
-		.. " "
-		.. NotifyCmd({
-			title = "$icon Battery: $capacity%",
-			body = "$status_txt",
-			sync = "battery-status",
-			timeout = 3000,
-		})
-end
 
 -- Bindings
-BindExec("XF86Calculator", "", calculator)
-BindExec(
+BindDsp(
+	"XF86Calculator",
+	"",
+	launchNotify({
+		l = "gnome-calculator",
+		p = "Calculator",
+		i = "accessories-calculator",
+	})
+)
+
+BindDsp(MainMod, "A", jumpOrLaunch({ l = "de.vito0912.yaabsa", p = "Yaabsa" }))
+BindDsp(
 	MainModCtrl,
 	"A",
-	jumpOrLaunch({ l = "pavucontrol", c = "org.pulseaudio.pavucontrol", p = "Volume Control", i = "󰕾" })
+	jumpOrLaunch({
+		l = "pavucontrol",
+		c = "org.pulseaudio.pavucontrol",
+		p = "Volume Control",
+		i = "org.pulseaudio.pavucontrol",
+	})
 ) -- Audio (device) control
 
-BindExec(MainMod, "B", browser) -- zen
-BindExec(MainModAlt, "B", "blender") -- Blender
+BindDsp(MainMod, "B", launchNotify({ l = "zen-browser", p = "Zen browser", c = "zen" })) -- browser
+BindDsp(MainModAlt, "B", launchNotify({ l = "blender" })) -- Blender
 BindExec(MainModCtrl, "B", HyprScript("bt-connect-menu")) -- BT Connection menu
-BindExec(MainModShift, "B", browser_private) -- zen (private window)
-BindExec(MainModCtrlAlt, "B", jumpOrLaunch({ l = "blueman-manager", i = "󰂯" }))
+BindDsp(
+	MainModShift,
+	"B",
+	launchNotify({
+		l = "zen-browser --private-window",
+		p = "Zen browser (private)",
+		i = "zen-browser",
+	})
+) -- private browser
+BindDsp(MainModCtrlAlt, "B", jumpOrLaunch({ l = "blueman-manager", i = "network-bluetooth" }))
 BindExec(MainModCtrlShift, "B", HyprScript("toggle-bluetooth")) -- Toggle Bluetooth
 
-BindExec(MainMod, "C", "code") -- VSCode
+BindDsp(MainMod, "C", launchNotify({ l = "code", i = "vscode" })) -- VSCode
 BindDsp(MainModAlt, "C", hl.dsp.cursor.move_to_corner({ corner = 1 })) -- Move cursor to corner
-BindExec(MainModCtrl, "C", "swaync-client -C") -- Close all notifications
+BindExec(MainModCtrl, "C", "swaync-client -C; hyprctl dismissnotify") -- Dismiss all notifications
 BindExec(MainModShift, "C", "cliphist list| fuzzel --dmenu| cliphist decode| wl-copy") -- Clipboard view
 
-BindExec(MainMod, "D", menu) -- fuzzel
+BindExec(MainMod, "D", "fuzzel") -- fuzzel
 BindExec(MainModShift, "D", HyprScript("list-open-apps")) -- List open software in fuzzel
-BindExec(MainModAlt, "D", jumpOrLaunch({ l = "com.discordapp.Discord", c = "discord", i = "󰙯" })) -- Discord
+BindDsp(MainModAlt, "D", jumpOrLaunch({ l = "com.discordapp.Discord", c = "discord" })) -- Discord
 
 BindExec(MainMod, "E", "footclient -e neomutt")
-BindExec(MainModAlt, "E", jumpOrLaunch({ l = "betterbird", c = "eu.betterbird.Betterbird", i = "" }))
+BindDsp(MainModAlt, "E", jumpOrLaunch({ l = "betterbird", c = "eu.betterbird.Betterbird" }))
 BindExec(MainModShift, "E", HyprScript("emoji-picker", "copy")) -- Emoji picker
-BindExec(
+BindDsp(
 	MainModCtrl,
 	"E",
-	jumpOrLaunch({ l = "easyeffects", c = "com.github.wwmm.easyeffects", p = "EasyEffects", i = "" })
+	jumpOrLaunch({
+		l = "easyeffects",
+		c = "com.github.wwmm.easyeffects",
+		p = "EasyEffects",
+		i = "com.github.wwmm.easyeffects-symbolic",
+	})
 ) -- EasyEffects
 
-BindExec(MainMod, "F", fileManager)
+BindDsp(MainMod, "F", launchNotify({ l = "nemo", i = "document-open-folder" }))
 BindExec(MainModAlt, "F", "footclient -e yazi") -- Terminal file manager (yazi)
 BindExec(MainModShift, "F", [[ footclient sh -c 'sel=$(fzf -e) && printf "%s" "$sel" | wl-copy' ]]) -- Fuzzy search
 BindDsp(MainModCtrl, "F", hl.dsp.window.float())
@@ -115,16 +84,36 @@ BindExec(MainModCtrl, "I", HyprScript("change-audio-input")) -- Change input aud
 BindDsp(MainMod, "J", hl.dsp.layout("togglesplit")) -- Toggles the split (top/side)
 BindDsp(MainModCtrl, "J", hl.dsp.layout("swapsplit")) -- Swaps the two halves of the split
 
-BindExec(MainMod, "L", jumpOrLaunch({ l = "net.corluma.Corluma", c = "corluma", i = "󰌵" })) -- Control HUE lights
+BindDsp(
+	MainMod,
+	"K",
+	jumpOrLaunch({
+		l = "pass show keepassxc/passwords-master | keepassxc --pw-stdin --keyfile ~/.config/keepassxc/Passwords.keyx ~/keepassxc/Passwords.kdbx",
+		c = "org.keepassxc.KeePassXC",
+		p = "KeePassXC",
+		i = "keepassxc",
+	})
+)
+
+BindExec(MainMod, "L", "nwg-icon-picker | tr -d '\n' | wl-copy")
 BindExec(MainModShift, "L", HyprScript("lenny-picker")) -- Lenny picker (fuzzel)
 
-BindExec(MainMod, "M", jumpOrLaunch({ l = "spotify", c = "Spotify", i = "󰓇" })) -- Spotify
-BindExec(MainModAlt, "M", jumpOrLaunch({ l = "footclient --app-id=rmpc --title=rmpc -e rmpc", c = "rmpc", i = "󰝚" }))
+BindDsp(MainMod, "M", jumpOrLaunch({ l = "feishin" })) -- Feishin (music player)
+BindDsp(MainModAlt, "M", jumpOrLaunch({ l = "spotify", c = "Spotify" })) -- Spotify
+-- BindExec(MainModAlt, "M", jumpOrLaunch({ l = "footclient --app-id=rmpc --title=rmpc -e rmpc", c = "rmpc", i = "emblem-music-symbolic" }))
 BindExec(MainModCtrl, "M", "toggle-mic-mute") -- Toggle (default) mic mute status
-BindExec(MainModShift, "M", jumpOrLaunch({ l = "beeper", c = "Beeper", p = "Beeper", i = "󰍡" })) -- Beeper
+BindDsp(
+	MainModShift,
+	"M",
+	jumpOrLaunch({
+		l = "beeper",
+		c = "Beeper",
+		i = "beepertexts",
+	})
+) -- Beeper
 BindExec(MainModCtrlShift, "M", "toggle-mouse-hold")
 
-BindExec(MainMod, "N", jumpOrLaunch({ l = "obsidian", i = "󰎞" }))
+BindDsp(MainMod, "N", jumpOrLaunch({ l = "obsidian", c = "md.obsidian.Obsidian" }))
 BindExec(MainModCtrl, "N", "swaync-client -t") -- Toggle the notification panel
 BindExec(MainModShift, "N", HyprScript("current-player-notify"))
 
@@ -145,13 +134,13 @@ BindExec(MainModAltShift, "O", HyprScript("device-battery-status")) -- Battery o
 
 BindExec(MainMod, "P", 'hyprpicker -a -q && notify-send "󰏘 Color copied to clipboard"') -- Color picker
 BindExec(MainModCtrl, "P", HyprScript("power-profile-picker")) -- Power profile picker
-BindExec(MainModShift, "P", HyprScript("mpc-queue-picker")) -- Clear queue, and set playlist in new queue
+-- BindExec(MainModShift, "P", HyprScript("mpc-queue-picker")) -- Clear queue, and set playlist in new queue
 BindExec(MainModCtrlAlt, "P", HyprScript("ratbag-profile-switcher")) -- Change Logitech mouse profile
 
 BindDsp(MainMod, "Q", hl.dsp.window.close()) -- Kill active window
 BindDsp(MainModShift, "Q", hl.dsp.window.kill()) -- Kill all similar windows to the active
 
-BindExec(MainMod, "R", HyprScript("rmpc-rate-song")) -- Rate current rmpc song
+-- BindExec(MainMod, "R", HyprScript("rmpc-rate-song")) -- Rate current rmpc song
 BindExec(MainModCtrlShift, "R", "hyprctl reload") -- Reload Hyprland
 
 -- BindExec(MainMod, "S", "hyprctl dispatch exec [workspace special] foot -e btop") -- System monitor
@@ -162,35 +151,27 @@ BindExec(MainModShift, "S", "footclient -e ncdu") -- Disk usage analyzer
 BindExec(MainModCtrlAlt, "S", "hyprshade on grayscale") -- Grayscale mode
 
 BindExec(MainMod, "T", "footclient") -- Terminal
-BindExec(MainModCtrl, "T", "toggle-touchpad") -- Toggle touchpad
-BindExec(MainModShift, "T", fileManager .. " trash://") -- Trash
-
--- TODO: Update system
--- BindExec(
---     MainMod,
---     "U",
---     [[footclient -e script -q -O /tmp/system-update-$(date +%Y%m%d-%H%M%S).log -c ~/.config/hypr/scripts/system-update.sh >/dev/null 2>&1]]
--- ) -- Update system
--- TODO: Alternative system updater
--- BindExec(
---     MainModAlt,
---     "U",
---     [[hyprctl dispatch exec [workspace special] foot -e script -q -O /tmp/system-alt-update-$(date +%Y%m%d-%H%M%S).log -c ~/.config/hypr/scripts/system-alt-update.sh >/dev/null 2>&1]]
--- )                                                               -- Other system updates
+BindExec(MainModCtrl, "T", HyprScript("toggle-touchpad")) -- Toggle touchpad
+BindDsp(
+	MainModShift,
+	"T",
+	launchNotify({
+		l = "nemo trash://",
+		p = "Trash",
+		i = "albumfolder-user-trash-symbolic",
+	})
+) -- Trash
 
 BindExec(MainModCtrl, "V", HyprScript("vpn-menu")) -- Fuzzel VPN menu
 
-BindExec(MainMod, "W", HyprScript("go-to-last-used-workspace")) -- Go to last used app
-BindExec(
-	MainModCtrl,
-	"W",
-	NotifyCmd({
-		sync = "workspace",
-		title = "󰍹 Current workspace: $(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | if .specialWorkspace.id == -99 then \"Special\" else .activeWorkspace.id end')",
-	})
-) -- Notify the current workspace id
+-- BindExec(MainMod, "W", HyprScript("go-to-last-used-workspace")) -- Go to last used app
+BindDsp(MainMod, "W", goToLastUsedWorkspace())
+BindDsp(MainModCtrl, "W", notifyCurrentWorkspace()) -- Notify the current workspace id
 BindExec(MainModShift, "W", HyprScript("list-last-used-apps")) -- List last used apps in fuzzel
 BindExec(MainModCtrlShift, "W", HyprScript("hold-key"))
+
+BindExec(MainMod, "Y", "footclient -e chroncal")
+-- TODO: List todays events in fuzzel
 
 BindDsp(MainMod, "Z", function()
 	local ZOOM_LEVEL = 2.5

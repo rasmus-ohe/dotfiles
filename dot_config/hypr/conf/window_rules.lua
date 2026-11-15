@@ -29,22 +29,36 @@ hl.window_rule({
 	suppress_event = "maximize",
 })
 
--- Spotify -> workspace 10
-hl.window_rule({ match = { class = "^Spotify$" }, workspace = "10 silent" })
-hl.window_rule({ match = { class = "^rmpc$" }, workspace = "10" })
+-- Functions
+local function class_to_workspace(class, ws)
+	hl.window_rule({ match = { class = "^" .. class .. "$" }, workspace = ws })
+end
 
--- Beeper -> workspace 8
-hl.window_rule({ match = { class = "^Beeper$" }, workspace = "8" })
+local function init_class_to_workspace(class, ws)
+	hl.window_rule({ match = { initial_class = "^" .. class .. "$" }, workspace = ws })
+end
 
--- Discord -> workspace 8
-hl.window_rule({ match = { initial_class = "^discord$" }, workspace = "8" })
-hl.window_rule({ match = { class = "^vesktop$" }, workspace = "8" })
+-- Music/Audio players -> workspace 10
+for _, class in pairs({
+	"Spotify",
+	"rmpc",
+	"feishin",
+	"de.vito0912.yaabsa",
+}) do
+	class_to_workspace(class, "10")
+end
+
+-- Messaging -> workspace 8
+for _, class in pairs({
+	"Beeper",
+	"vesktop",
+}) do
+	class_to_workspace(class, "8")
+end
+init_class_to_workspace("discord", "8")
 
 -- Betterbird -> workspace 7
-hl.window_rule({ match = { class = "^eu\\.betterbird\\.Betterbird$" }, workspace = "7" })
-
--- Corluma -> workspace 5
-hl.window_rule({ match = { class = "^corluma$" }, workspace = "5" })
+class_to_workspace("^eu\\.betterbird\\.Betterbird$", "7")
 
 -- Blender -> workspace 1 (keep file browser size persistent)
 hl.window_rule({

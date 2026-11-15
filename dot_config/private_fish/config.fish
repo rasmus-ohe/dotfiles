@@ -21,6 +21,10 @@ abbr nn 'nvim ~/.config/nvim/'
 abbr mutt 'neomutt'
 abbr nm 'neomutt'
 
+# Chroncal
+abbr cal 'chroncal'
+abbr calendar 'chroncal'
+
 # VSCode
 abbr c. 'code .'
 abbr ch 'code ~/.config/hypr/'
@@ -159,6 +163,7 @@ abbr cl 'clear'
 abbr yz 'yazi'
 abbr mkcd 'mkdir-cd'
 abbr mc 'mkdir-cd'
+abbr now 'date'
 
 fish_add_path /home/rasmus/.spicetify
 fish_add_path /home/rasmus/.local/bin/

@@ -44,7 +44,7 @@ BindDsp(MainMod, "Escape", function()
 		hl.dispatch(hl.dsp.focus({ workspace = 99 + indx }))
 	end
 
-	ExecNofityCmd({ title = "󰜎 Escaped" })
+	ExecNotifyCmd({ title = "󰜎 Escaped" })
 end)
 
 --- Laptop lid
@@ -52,34 +52,34 @@ end)
 --     hl.dsp.dpms({ action = action, monitor = "eDP-1" })
 -- end
 
-local function handleLidClosed()
-	local monitors = hl.get_monitors()
-	local eDP1_monitor = hl.get_monitor("eDP-1")
+-- local function handleLidClosed()
+-- 	local monitors = hl.get_monitors()
+-- 	local eDP1_monitor = hl.get_monitor("eDP-1")
+--
+-- 	if eDP1_monitor == nil then
+-- 		ExecNofityCmd({ title = "Lid closed", body = "Monitor not found", timeout = 10000 })
+-- 		return
+-- 	end
+--
+-- 	-- Check if more than one
+-- 	if #monitors > 1 then
+-- 		-- Disable "eDP-1"
+-- 		hl.monitor({ output = "eDP-1", disabled = true })
+-- 		ExecNofityCmd({ title = "Lid closed", body = "Monitor disabled", timeout = 10000 })
+-- 	else
+-- 		-- TODO: Put to sleep
+-- 	end
+-- end
 
-	if eDP1_monitor == nil then
-		ExecNofityCmd({ title = "Lid closed", body = "Monitor not found", timeout = 10000 })
-		return
-	end
-
-	-- Check if more than one
-	if #monitors > 1 then
-		-- Disable "eDP-1"
-		hl.monitor({ output = "eDP-1", disabled = true })
-		ExecNofityCmd({ title = "Lid closed", body = "Monitor disabled", timeout = 10000 })
-	else
-		-- TODO: Put to sleep
-	end
-end
-
-local function handleLidOpen()
-	-- Check if monitor is enabled
-	if hl.get_monitor("eDP-1") == nil then
-		-- Enable "eDP-1"
-		hl.monitor({ output = "eDP-1", disabled = false })
-		HyprReload()
-		ExecNofityCmd({ title = "Lid open", body = "Monitor enabled", timeout = 10000 })
-	end
-end
+-- local function handleLidOpen()
+-- 	-- Check if monitor is enabled
+-- 	if hl.get_monitor("eDP-1") == nil then
+-- 		-- Enable "eDP-1"
+-- 		hl.monitor({ output = "eDP-1", disabled = false })
+-- 		HyprReload()
+-- 		ExecNofityCmd({ title = "Lid open", body = "Monitor enabled", timeout = 10000 })
+-- 	end
+-- end
 
 -- BindDsp("", "switch:on:Lid Switch", function()
 -- 	handleLidClosed()
@@ -87,13 +87,3 @@ end
 -- BindDsp("", "switch:off:Lid Switch", function()
 -- 	handleLidOpen()
 -- end)
-
-local function tempDebug()
-	hl.exec_cmd("beeper", { workspace = "1 silent" })
-
-	-- ExecNofityCmd({ title = "Debug", body = TwoDecimalPlaces(eDP1_monitor.scale), timeout = 10000 })
-end
-
-BindDsp(MainMod, "A", function()
-	tempDebug()
-end)
