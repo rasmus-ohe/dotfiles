@@ -1,10 +1,10 @@
 --- Start on boot
 
-local function update_check()
-	local pipeline = [[
-    updates=$()
-  ]]
-end
+-- local function update_check()
+-- 	local pipeline = [[
+--     updates=$()
+--   ]]
+-- end
 
 -- Autostart
 hl.on("hyprland.start", function()

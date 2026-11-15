@@ -39,13 +39,16 @@ elif [ -z "$LAUNCH_CMD" ]; then
 fi
 
 # If no print name is given, use the class name as the print name, with the first letter capitalized
-if [ -z "$NAME_PRINT" ]; then
-   NAME_PRINT=${HYPR_CLASS^}
-fi
+[[ -z $NAME_PRINT ]] && NAME_PRINT="${HYPR_CLASS}"
+# if [ -z "$NAME_PRINT" ]; then
+#    NAME_PRINT=${HYPR_CLASS^}
+# fi
 
-if [ -n "$ICON" ]; then
-  ICON="${ICON} "
-fi
+# TITLE="${NAME_PRINT}"
+# [[ -n $ICON ]] && TITLE="${ICON} ${TITLE}"
+# if [ -n "$ICON" ]; then
+#   ICON="${ICON} "
+# fi
 
 # Get the workspace ID of the application with the given class name
 WS_ID="$(hyprctl clients -j \
@@ -53,13 +56,20 @@ WS_ID="$(hyprctl clients -j \
     '.[] | select(.class == $cls) | .workspace.id' \
   | head -n1)"
 
+notify(){
+  TITLE=$1
+  BODY=$2
+
+  notify-send -h string:synchronous:launch-or-jump "${TITLE}" "${BODY}"
+}
 
 # If the workspace ID is not empty, jump to the workspace and focus the windo
 if [ -n "$WS_ID" ]; then
-  notify-send -h string:synchronous:hyprctl-jump "${ICON}Jumping to $NAME_PRINT" "Workspace $WS_ID"
+  notify "${TITLE}" ""
+  # notify-send -h string:synchronous:hyprctl-jump "${ICON}Jumping to $NAME_PRINT" "Workspace $WS_ID"
   hyprctl dispatch "hl.dsp.focus({ workspace=$WS_ID })"
   hyprctl dispatch "hl.dsp.focus({ window=\"class:$HYPR_CLASS\" })"
 else # If the workspace ID is empty, launch the application
-  notify-send -h string:synchronous:hyprctl-jump "${ICON}Launching $NAME_PRINT"
+  # notify-send -h string:synchronous:hyprctl-jump "${ICON}Launching $NAME_PRINT"
   sh -c "$LAUNCH_CMD" &
 fi
